@@ -85,6 +85,30 @@
 	font-weight:bold;
 	line-height:100%;
 }
+body {
+	background-color:#888;
+}
+/* page break line */
+hr.hr1 {
+	float:left;
+	height:100%;
+	width:100%;
+	margin:0;
+	border-style:solid;
+	background-color:#666666;
+}
+/* page break */
+div.div0 {
+	height:5px;
+	position:relative;
+	page-break-before:always;
+	margin-left:auto;
+	margin-right:auto;
+	width:50%;
+	margin:0;
+	font-size:0px;
+	background-color:#888;
+}
 div.Page11411 {
 	padding-left:2.12%;		/* 29/1366px */
 	padding-right:2.12%;
