@@ -712,7 +712,6 @@ div.div50 {
 	margin-bottom: 0;
 	padding:0;
 	float:left;
-	display:inline;
 }
 div.div51 {
 	width: 100%;
@@ -752,3 +751,4 @@ div.div56 {
 	width:98%;			/* 595/758 */
 	float:left;
 }
+
