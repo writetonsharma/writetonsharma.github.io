@@ -89,3 +89,24 @@ span.span0 {
 div.div1 {
 	line-height:4px;
 }
+#nav-right, #nav-left {
+    position: absolute;
+    top: 40%;
+    width:64px;
+    height:64px;
+    display:inline-block;
+    margin:0;
+    background-image: url(../Images/navs.png);
+	z-index:2;
+}
+#nav-left {
+    left: 0;
+    background-position:0 -64px;
+}
+#nav-left:hover {background-position:0 0;}
+
+#nav-right {
+    right: 0;
+    background-position:-64px -64px;
+}
+#nav-right:hover {background-position:-64px 0;}

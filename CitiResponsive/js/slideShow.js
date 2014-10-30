@@ -8,13 +8,12 @@ function slideShow() {
     slideDelay: 4000, // The time interval between consecutive slides.
     fadeDelay: 35, // The time interval between individual opacity changes. This should always be much smaller than slideDelay.  
     wrapperID: "slideShowImages", // The ID of the <div> element that contains all of the <img> elements to be shown as a slide show.
-    //buttonID: "slideShowButton", // The ID of the <button> element that toggles the slide show on and off.
     wrapperIDPhone: "slideShowImagesPhone", // The ID of the <div> element that contains all of the <img> elements to be shown as a slide show.
-    //buttonIDPhone: "slideShowButtonPhone", // The ID of the <button> element that toggles the slide show on and off.
     buttonStartText: "Start Slides", // Text used in the slide show toggle button.
     buttonStopText: "Stop Slides", // Text used in the slide show toggle button.    
     wrapperObject: null, // Will contain a reference to the <div> element that contains all of the <img> elements to be shown as a slide show.
-    //buttonObject: null, // If present, will contain a reference to the <button> element that toggles the slide show on and off. The initial assumption is that there is no such button element (hence the false value).
+	LeftSlideID: "#nav-left",
+	RightSlideID: "#nav-right",
     slideImages: [], // Will contain all of the slide image objects.
     slideShowID: null, // A setInterval() ID value used to stop the slide show.
     slideShowRunning: true, // Used to record when the slide show is running and when it's not. The slide show is always initially running.    
@@ -40,8 +39,13 @@ function slideShow() {
   initializeSlideShowMarkup();
   
   //globals.wrapperObject.addEventListener('click', transitionSlides, false); // change on click
-  $(globals.wrapperObject).click(transitionSlides);
-  $(globals.wrapperObject).on("tap", transitionSlides);
+  //$(globals.wrapperObject).click(transitionSlides);
+  //$(globals.wrapperObject).on("tap", transitionSlides);
+
+
+
+  //$(globals.wrapperObject).children().on("swipeleft", transitionSlides);
+  //$(globals.wrapperObject).children().on("swiperight", transitionSlides);
   //globals.wrapperObject.addEventListener('touchend' transitionSlides, false); // change on tap
   //globals.wrapperObject.addEventListener('click', toggleSlideShow, false); // If the user clicks a slide show image, it toggles the slide show on and off.
   
@@ -58,14 +62,17 @@ function slideShow() {
 	if(document.documentElement.clientWidth < 720 )
 	{
 		globals.wrapperObject = (document.getElementById(globals.wrapperIDPhone) ? document.getElementById(globals.wrapperIDPhone) : null);
+		$(globals.wrapperObject).on("swipeleft", swipeSlidesLeft);
+		$(globals.wrapperObject).on("swiperight", swipeSlidesRight);
 		//globals.buttonObject = (document.getElementById(globals.buttonIDPhone) ? document.getElementById(globals.buttonIDPhone) : null); 	
 	}
 	else
     {
 		globals.wrapperObject = (document.getElementById(globals.wrapperID) ? document.getElementById(globals.wrapperID) : null);
+		$(globals.LeftSlideID).click(transitionSlidesLeft);
+		$(globals.RightSlideID).click(transitionSlidesRight);
 		//globals.buttonObject = (document.getElementById(globals.buttonID) ? document.getElementById(globals.buttonID) : null);   
-    }
-	
+    }	
 	
     if (globals.wrapperObject) {
       globals.slideImages = (globals.wrapperObject.querySelectorAll('img') ? globals.wrapperObject.querySelectorAll('img') : []);
@@ -110,14 +117,20 @@ function slideShow() {
 	globals.wrapperObject.style.marginBottom = "5px";
     
     var slideCount = globals.slideImages.length;
+	var totalWidth = 0;
     for (var i = 0; i < slideCount; i++) { 
-      globals.slideImages[i].style.opacity = 0;
+      //globals.slideImages[i].style.opacity = 0;
       globals.slideImages[i].style.position = "absolute";
       globals.slideImages[i].style.top = (slideHeightMax - globals.slideImages[i].getBoundingClientRect().height) / 2 + "px";   
-      globals.slideImages[i].style.left = ($(globals.slideImages[0]).width() - globals.slideImages[i].getBoundingClientRect().width) / 2 + "px";               
+      //globals.slideImages[i].style.left = ($(globals.slideImages[0]).width() - globals.slideImages[i].getBoundingClientRect().width) / 2 + "px";               
+	  globals.slideImages[i].style.left = totalWidth + "px";
+	  totalWidth += $(globals.slideImages[i]).width();
     }
     
-    globals.slideImages[0].style.opacity = 1; // Make the first slide visible.
+	// hide the right button initially
+	$('#nav-right').css("visibility", "hidden");
+	
+    //globals.slideImages[0].style.opacity = 1; // Make the first slide visible.
         
 //    if (globals.buttonObject) {
 //      globals.buttonObject.textContent = globals.buttonStopText;
@@ -167,19 +180,19 @@ function slideShow() {
 
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-  function startSlideShow() {
-    globals.slideShowID = setInterval(transitionSlides, globals.slideDelay);                
+/*  function startSlideShow() {
+    //globals.slideShowID = setInterval(transitionSlides, globals.slideDelay);                
   } // startSlideShow
-
+*/
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   
-  function haltSlideShow() {
+/*  function haltSlideShow() {
     clearInterval(globals.slideShowID);   
   } // haltSlideShow
-
+*/
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   
-  function toggleSlideShow() {
+/*  function toggleSlideShow() {
     if (globals.slideShowRunning) {
       haltSlideShow();
 //      if (globals.buttonObject) { 
@@ -193,17 +206,37 @@ function slideShow() {
 //      }            
     }
     globals.slideShowRunning = !(globals.slideShowRunning);
-  } // toggleSlideShow
+  } */// toggleSlideShow
   
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-  function transitionSlides() {
+  function transitionSlidesRight() {
+  
+	// on right, make the left arrow visible as this made room to move slides left
+	$('#nav-left').css("visibility", "visible");
+	
+	if(globals.slideIndex == 1)
+	{
+		$('#nav-right').css("visibility", "hidden");
+	}
+	--(globals.slideIndex);
+	for(var i = 0;i < globals.slideImages.length;i++)
+	{
+		// shift each slide right one step
+		var currentSlide = globals.slideImages[i]
+		$(currentSlide).animate( {left:"+=" + $(currentSlide).width()});
+	}
+  
+/*
     var currentSlide = globals.slideImages[globals.slideIndex];
     
-    ++(globals.slideIndex);
-    if (globals.slideIndex >= globals.slideImages.length) {
-      globals.slideIndex = 0;
+	if (globals.slideIndex <= 0 ) {
+      globals.slideIndex = globals.slideImages.length - 1;
     }
+	else{
+		--(globals.slideIndex);
+	}
+
     
     var nextSlide = globals.slideImages[globals.slideIndex];
     
@@ -228,6 +261,97 @@ function slideShow() {
         clearInterval(fadeActiveSlidesID);
       }        
     } // fadeActiveSlides
-  } // transitionSlides
+*/
+
+  } // transitionSlidesRight
   
+    function transitionSlidesLeft() {
+	
+	// on left click, make the right visible as this made room to move right
+	$('#nav-right').css("visibility", "visible");
+	
+	
+	// check if the next slide is going to be the last slide
+	// hide the left button in that case
+	if(globals.slideIndex == globals.slideImages.length - 2)
+	{
+		$('#nav-left').css("visibility", "hidden");
+	}
+	++(globals.slideIndex);
+	for(var i = 0;i < globals.slideImages.length;i++)
+	{
+		// shift each slide left
+		var currentSlide = globals.slideImages[i]
+		$(currentSlide).animate( {left:"-=" + $(currentSlide).width()});
+	}
+	
+    //var currentSlide = globals.slideImages[globals.slideIndex];
+    
+    
+//    if (globals.slideIndex >= globals.slideImages.length) {
+//     globals.slideIndex = 0;
+//    }
+    
+    //var nextSlide = globals.slideImages[globals.slideIndex];
+    
+    //var currentSlideOpacity = 1; // Fade the current slide out.
+    //var nextSlideOpacity = 0; // Fade the next slide in.
+    //var opacityLevelIncrement = 1 / globals.fadeDelay;
+    //var fadeActiveSlidesID = setInterval(fadeActiveSlides, globals.fadeDelay);
+    
+	//$(currentSlide).animate( {left:"-=" + $(currentSlide).width()});
+	//currentSlide.style.opacity = 0;
+	//nextSlide.style.opacity = 1;
+	//$(nextSlide).animate( {left:"-=" + $(nextSlide).width()});
+	
+/*    function fadeActiveSlides() {
+      currentSlideOpacity -= opacityLevelIncrement;
+      nextSlideOpacity += opacityLevelIncrement;
+      
+      // console.log(currentSlideOpacity + nextSlideOpacity); // This should always be very close to 1.
+	  
+      if (currentSlideOpacity >= 0 && nextSlideOpacity <= 1) {
+        currentSlide.style.opacity = currentSlideOpacity;
+        nextSlide.style.opacity = nextSlideOpacity; 
+      }
+      else {
+        currentSlide.style.opacity = 0;
+        nextSlide.style.opacity = 1; 
+        clearInterval(fadeActiveSlidesID);
+      }
+    }  // fadeActiveSlides*/
+  } // transitionSlidesLeft
+  
+    function swipeSlidesRight() {
+	
+	if(globals.slideIndex == 0)
+	{
+		return;
+	}
+	--(globals.slideIndex);
+	for(var i = 0;i < globals.slideImages.length;i++)
+	{
+		// shift each slide right one step
+		var currentSlide = globals.slideImages[i]
+		$(currentSlide).animate( {left:"+=" + $(currentSlide).width()});
+	}
+}	// swipeSlidesRight
+
+	function swipeSlidesLeft() {
+		
+	// check if the next slide is going to be the last slide
+	// hide the left button in that case
+	if(globals.slideIndex == globals.slideImages.length - 1)
+	{
+		return;
+	}
+	++(globals.slideIndex);
+	for(var i = 0;i < globals.slideImages.length;i++)
+	{
+		// shift each slide left
+		var currentSlide = globals.slideImages[i]
+		$(currentSlide).animate( {left:"-=" + $(currentSlide).width()});
+	}
+}	// swipeSlidesLeft
+
 } // slideShow
