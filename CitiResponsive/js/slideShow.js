@@ -326,6 +326,19 @@ function slideShow() {
 	
 	if(globals.slideIndex == 0)
 	{
+		 $(globals.slideImages[globals.slideIndex])
+		.animate(
+			{ left:'+=200' }, {
+				duration: 'slow',
+				easing: 'easeOutBack'
+			})
+		.animate(
+			{ left: 0 }, {
+
+				duration: 'slow',
+				easing: 'easeOutBack'
+			});
+
 		return;
 	}
 	--(globals.slideIndex);
@@ -343,13 +356,25 @@ function slideShow() {
 	// hide the left button in that case
 	if(globals.slideIndex == globals.slideImages.length - 1)
 	{
+	        $(globals.slideImages[globals.slideIndex])
+            .animate(
+                { left:'-=200' }, {
+                    duration: 'slow',
+                    easing: 'easeOutBack'
+                })
+            .animate(
+                { left: 0 }, {
+ 
+                    duration: 'slow',
+                    easing: 'easeOutBack'
+                });
 		return;
 	}
 	++(globals.slideIndex);
 	for(var i = 0;i < globals.slideImages.length;i++)
 	{
 		// shift each slide left
-		var currentSlide = globals.slideImages[i]
+		var currentSlide = globals.slideImages[i];
 		$(currentSlide).animate( {left:"-=" + $(currentSlide).width()});
 	}
 }	// swipeSlidesLeft
