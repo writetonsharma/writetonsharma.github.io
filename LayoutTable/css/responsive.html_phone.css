@@ -1,0 +1,76 @@
+﻿@charset "utf-8";
+
+/*
+	Designer version 14.0.0 build 76 generated CSS file
+	Generation Date: 12/24/2014
+	Document Name: responsive.html
+
+	## WARNING: DO NOT EDIT THE FILE!! ##
+*/
+
+div.div3 {
+	z-index:0;		
+	overflow:auto;
+	position:relative;
+	width:68.00%;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:0px;
+	margin-bottom:0px;
+	background-color:#ffffff;
+	-moz-border-radius:13.00px;
+	-webkit-border-radius:13.00px;
+	border-radius:13.00px;
+	-moz-box-shadow:5px 0px 5px 2px #555;
+	-webkit-box-shadow:5px 0px 5px 2px #555;
+	box-shadow:5px 0px 5px 2px #555;
+}
+div.div4 {
+	display: inline;
+	width:0.00%;
+}
+div.div6 {
+	text-align:left;
+	line-height:1.00;
+}
+.f1 {
+	font-family:Arial;
+	font-size:0.8333em;
+	font-style:normal;
+	font-weight:normal;
+	line-height:100%;
+}
+span.span2 {
+	line-height:1.00;
+}
+div.div5 {
+	display: inline;
+	width:100.00%;
+}
+.f2 {
+	font-family:DFKai-SB;
+	font-size:0.8333em;
+	font-style:normal;
+	font-weight:normal;
+	line-height:100%;
+}
+.c1 {
+	color:#FF0000;
+}
+div.charStyle1 {
+	line-height:1.00;
+}
+table.tablestyle1 {
+	border-collapse:collapse;
+	border-spacing:0.00px;
+	width:100.00%;
+	margin-left:4.17%;
+	float:left;
+	display: none;
+}
+td.colStyle1 {
+	
+	height:15.00px;
+	width:50.00%;
+	vertical-align:top;
+}

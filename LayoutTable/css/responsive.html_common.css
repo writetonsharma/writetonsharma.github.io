@@ -1,0 +1,102 @@
+﻿@charset "utf-8";
+
+/*
+	Designer version 14.0.0 build 76 generated CSS file
+	Generation Date: 12/24/2014
+	Document Name: responsive.html
+
+	## WARNING: DO NOT EDIT THE FILE!! ##
+*/
+
+div.Page724243 {
+	padding-left:5.86%;
+	padding-right:5.86%;
+	padding-top:96.00px;
+	padding-bottom:36.00px;
+}
+@media print {
+	.noprint {display:none;}
+}
+@media screen {
+	.noscreen {display:none;}
+}
+
+body {
+	background-color:#888;
+}a:link {
+	color:#0000FF;
+}
+a:visited {
+	color:#800080;
+}
+
+/* reset css */
+body,div,span,pre,p {
+	margin:0;
+	padding:0;
+	border:0;
+	font-size:100%;
+	font:inherit;
+	vertical-align:baseline;
+}
+p,span,th,td {
+	font-style:normal;
+	font-weight:normal;
+}
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin:0;
+	padding:0;
+	border:0;
+	font-size:100%;
+	font:inherit;
+	vertical-align:middle;
+}
+
+img, video {width: 100%;}
+.clearr {clear: right;}
+.clearl {clear: left;}
+.clearn {clear: none;}
+.visibleh {visibility: hidden;}
+.displayn {display: none;}
+/* normal styles */
+p.normal, table.normal, div.normal {
+	text-align:left;
+	text-indent:0;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0.0in;
+	margin-left:0in;
+	clear:left;
+}
+
+/* page break line */
+hr.hr1 {
+	float:left;
+	height:100%;
+	width:100%;
+	margin:0;
+	border-style:solid;
+	background-color:#666666;
+}
+/* page break */
+div.div1 {
+	height:5px;
+	position:relative;
+	page-break-before:always;
+	margin-left:auto;
+	margin-right:auto;
+	width:50%;
+	margin:0;
+	font-size:0px;
+	background-color:#888;
+}
+
+span.span1 {
+	visibility:hidden;white-space:pre;
+}
+div.div2 {
+	line-height:4px;
+}
+br.br1 {
+	clear:left;
+}
