@@ -2,7 +2,7 @@
 
 /*
 	Designer version 14.0.0 build 76 generated CSS file
-	Generation Date: 12/24/2014
+	Generation Date: 01/08/2015
 	Document Name: responsive.html
 
 	## WARNING: DO NOT EDIT THE FILE!! ##
@@ -29,7 +29,7 @@ div.div4 {
 	display: inline;
 	width:0.00%;
 }
-div.div6 {
+div.div7 {
 	text-align:left;
 	line-height:1.00;
 }
@@ -60,17 +60,21 @@ div.div5 {
 div.charStyle1 {
 	line-height:1.00;
 }
+div.div6 {
+	display: inline;
+	width:100.00%;
+}
 table.tablestyle1 {
 	border-collapse:collapse;
 	border-spacing:0.00px;
 	width:100.00%;
-	margin-left:4.17%;
+	margin-left:2.78%;
 	float:left;
 	display: none;
 }
 td.colStyle1 {
 	
 	height:108.00px;
-	width:50.00%;
+	width:33.33%;
 	vertical-align:top;
 }
