@@ -2,7 +2,7 @@
 
 /*
 	Designer version 14.0.0 build 76 generated CSS file
-	Generation Date: 01/08/2015
+	Generation Date: 01/16/2015
 	Document Name: responsive.html
 
 	## WARNING: DO NOT EDIT THE FILE!! ##
@@ -27,7 +27,7 @@ div.div3 {
 }
 div.div4 {
 	display: none;
-	width:0.00%;
+	width:20.69%;
 }
 div.div7 {
 	text-align:left;
@@ -43,18 +43,64 @@ div.div7 {
 span.span2 {
 	line-height:1.00;
 }
-div.div5 {
+div.div8 {
 	display: none;
-	width:100.00%;
+	width:33.33%;
 }
 .f2 {
+	font-family:DFKai-SB;
+	font-size:0.8333em;
+	font-style:normal;
+	font-weight:normal;
+	line-height:100%;
+}
+.c1 {
+	color:#FF0000;
+}
+div.charStyle2 {
+	line-height:1.00;
+}
+div.div9 {
+	display: none;
+	width:66.67%;
+}
+.c2 {
+	color:#0000FF;
+}
+div.charStyle3 {
+	line-height:1.00;
+}
+table.tablestyle2 {
+	border-collapse:collapse;
+	border-spacing:0.00px;
+	width:100.00%;
+	float:left;
+	display: table;
+}
+td.td1 {
+	
+	height:138.00px;
+	width:33.33%;
+	vertical-align:top;
+}
+td.td2 {
+	
+	height:138.00px;
+	width:66.67%;
+	vertical-align:top;
+}
+div.div5 {
+	display: none;
+	width:20.69%;
+}
+.f3 {
 	font-family:Comic Sans MS;
 	font-size:1.8333em;
 	font-style:normal;
 	font-weight:normal;
 	line-height:100%;
 }
-.c1 {
+.c3 {
 	color:#008000;
 }
 div.charStyle1 {
@@ -62,19 +108,35 @@ div.charStyle1 {
 }
 div.div6 {
 	display: none;
-	width:100.00%;
+	width:55.17%;
+}
+div.div10 {
+	text-align:center;
+	padding-left:6.25%;
+	line-height:1.00;
+}
+img.img1 {
+	z-index:2;		
+	width:100.0000%;
+	float:none;
 }
 table.tablestyle1 {
 	border-collapse:collapse;
 	border-spacing:0.00px;
-	width:100.00%;
-	margin-left:2.78%;
+	width:96.55%;
+	margin-left:3.57%;
 	float:left;
 	display: table;
 }
 td.colStyle1 {
 	
-	height:108.00px;
-	width:33.33%;
+	height:278.00px;
+	width:21.43%;
+	vertical-align:top;
+}
+td.td3 {
+	
+	height:138.00px;
+	width:57.14%;
 	vertical-align:top;
 }
