@@ -1,0 +1,114 @@
+﻿@charset "utf-8";
+
+/*
+	Designer version 14.0.0 build 112 generated CSS file
+	Generation Date: 03/03/2015
+	Document Name: responsive.html
+
+	## WARNING: DO NOT EDIT THE FILE!! ##
+*/
+
+body {
+	background-color:#888;
+}div.div3 {
+	z-index:0;		
+	overflow:auto;
+	position:relative;
+	width:68.00%;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:0px;
+	margin-bottom:0px;
+	background-color:#ffffff;
+	-moz-border-radius:13.00px;
+	-webkit-border-radius:13.00px;
+	border-radius:13.00px;
+	-moz-box-shadow:5px 0px 5px 2px #555;
+	-webkit-box-shadow:5px 0px 5px 2px #555;
+	box-shadow:5px 0px 5px 2px #555;
+}
+div.div4 {
+	margin-top:5.59%;
+	margin-bottom:5.59%;
+	margin-left:26.95%;
+	display: block;
+	border-top:1.00px solid #0000FF;
+	border-bottom:1.00px solid #0000FF;
+	border-left:1.00px solid #0000FF;
+	border-right:1.00px solid #0000FF;
+	border-radius:11.00px 11.00px 11.00px 11.00px;
+	padding-top:8.00px;
+	padding-left:5.00px;
+	padding-right:5.00px;
+	padding-bottom:8.00px;
+	width:63.23%;
+}
+div.div6 {
+	text-align:left;
+	line-height:1.00;
+}
+.f1 {
+	font-family:Calibri;
+	font-size:1.1667em;
+	font-style:normal;
+	font-weight:normal;
+	line-height:100%;
+}
+.c1 {
+	color:#0000FF;
+}
+div.charStyle1 {
+	line-height:1.00;
+}
+div.div5 {
+	margin-top:5.59%;
+	margin-bottom:5.59%;
+	margin-left:26.95%;
+	display: block;
+	border-top:1.00px solid #0000FF;
+	border-bottom:1.00px solid #0000FF;
+	border-left:1.00px solid #0000FF;
+	border-right:1.00px solid #0000FF;
+	border-radius:11.00px 11.00px 11.00px 11.00px;
+	padding-top:8.00px;
+	padding-left:5.00px;
+	padding-right:5.00px;
+	padding-bottom:8.00px;
+	width:63.23%;
+}
+table.tablestyle2 {
+	border-collapse:collapse;
+	border-spacing:0.00px;
+	width:55.17%;
+	border-top:1.00px solid #0000FF;
+	border-bottom:1.00px solid #0000FF;
+	border-left:1.00px solid #0000FF;
+	border-right:1.00px solid #0000FF;
+	margin-left:10.00%;
+	margin-top:8.00px;
+	margin-bottom:8.00px;
+	float:left;
+	display: none;
+}
+td.td1 {
+	
+	height:92.00px;
+	width:49.80%;
+	vertical-align:top;
+	border-radius:21.00px 0.00px 0.00px 21.00px;
+	padding-top:1.00px;
+	padding-left:0.50%;
+	padding-right:0.50%;
+	padding-bottom:1.00px;
+}
+td.td2 {
+	
+	height:90.00px;
+	width:49.80%;
+	vertical-align:top;
+	border-radius:0.00px 21.00px 21.00px 0.00px;
+	padding-top:1.00px;
+	padding-left:0.50%;
+	padding-right:0.50%;
+	padding-bottom:1.00px;
+}
