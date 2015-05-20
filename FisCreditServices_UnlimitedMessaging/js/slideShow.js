@@ -51,6 +51,8 @@ function slideShow() {
 		globals.wrapperObject = (document.getElementById(globals.wrapperIDPhone) ? document.getElementById(globals.wrapperIDPhone) : null);
 		$(globals.wrapperObject).on("swipeleft", swipeSlidesLeft);
 		$(globals.wrapperObject).on("swiperight", swipeSlidesRight);
+		$(globals.PlaySlideID).click(transitionSlidesStop);
+		$(globals.LoopSlideID).click(SlidesLoop);
 		//globals.buttonObject = (document.getElementById(globals.buttonIDPhone) ? document.getElementById(globals.buttonIDPhone) : null);
 		swipeIsOn = true;		
 	}
