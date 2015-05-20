@@ -121,12 +121,35 @@ br.br1 {
 	background-repeat: no-repeat;
 	z-index:0;
 }
+#nav-play-p{
+    position: absolute;
+    top: 77%;
+    width:64px;
+    height:64px;
+    display:inline-block;
+    margin:0;
+    background-image: url(../Images/navs.png);
+	z-index: 0;
+}
+#nav-loop-p {
+	position: absolute;
+    top: 77%;
+	right: 0px;
+    width:64px;
+    height:64px;
+    display:inline-block;
+    margin:0;
+	background-repeat: no-repeat;
+	z-index:0;
+}
+
 .loop-image {
 	background-image: url("../Images/loop.png");
 }
 .loopstop-image {
 	background-image: url("../Images/loop-stop.png");
 }
+
 
 #nav-left {
     left: 20%;
@@ -141,6 +164,10 @@ br.br1 {
 #nav-right:hover {background-position:-64px 0;}
 
 #nav-play {
+	left: 40%;
+	background-position: -0px -128px;
+}
+#nav-play-p {
 	left: 40%;
 	background-position: -0px -128px;
 }

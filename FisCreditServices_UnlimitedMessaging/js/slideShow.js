@@ -16,6 +16,8 @@ function slideShow() {
 	RightSlideID: "#nav-right",
 	PlaySlideID: "#nav-play",
 	LoopSlideID: "#nav-loop",
+	PlaySlideIDP: "#nav-play-p",
+	LoopSlideIDP: "#nav-loop-p",
     slideImages: [], // Will contain all of the slide image objects.
     slideShowID: null, // A setInterval() ID value used to stop the slide show.
     slideShowRunning: true, // Used to record when the slide show is running and when it's not. The slide show is always initially running.    
@@ -51,10 +53,10 @@ function slideShow() {
 		globals.wrapperObject = (document.getElementById(globals.wrapperIDPhone) ? document.getElementById(globals.wrapperIDPhone) : null);
 		$(globals.wrapperObject).on("swipeleft", swipeSlidesLeft);
 		$(globals.wrapperObject).on("swiperight", swipeSlidesRight);
-		$(globals.PlaySlideID).click(transitionSlidesStop);
-		$(globals.LoopSlideID).click(SlidesLoop);
+		$(globals.PlaySlideIDP).click(transitionSlidesStop);
+		$(globals.LoopSlideIDP).click(SlidesLoop);
 		//globals.buttonObject = (document.getElementById(globals.buttonIDPhone) ? document.getElementById(globals.buttonIDPhone) : null);
-		swipeIsOn = true;		
+		globals.swipeIsOn = true;		
 	}
 	else
     {
@@ -64,7 +66,7 @@ function slideShow() {
 		$(globals.PlaySlideID).click(transitionSlidesStop);
 		$(globals.LoopSlideID).click(SlidesLoop);		
 		//globals.buttonObject = (document.getElementById(globals.buttonID) ? document.getElementById(globals.buttonID) : null); 
-		swipeIsOn = false;
+		globals.swipeIsOn = false;
     }	
 	
     if (globals.wrapperObject) {
@@ -214,7 +216,14 @@ function slideShow() {
 	{
 		// play image showing, means the autoplay is stopped
 		globals.slideShowRunning = false;
-		$(globals.PlaySlideID).css("background-position", "-64px -128px");
+		if(globals.swipeIsOn)
+		{
+			$(globals.PlaySlideIDP).css("background-position", "-64px -128px");
+		}
+		else
+		{
+			$(globals.PlaySlideID).css("background-position", "-64px -128px");
+		}
 		window.clearInterval(globals.slideShowID)
 		
 		// show navigation
@@ -238,13 +247,27 @@ function slideShow() {
 		
 		// unloop button on
 		globals.loop = false;
-		$(globals.LoopSlideID).removeClass('loop-image').addClass('loopstop-image');
+		if(globals.swipeIsOn)
+		{
+			$(globals.LoopSlideIDP).removeClass('loop-image').addClass('loopstop-image');
+		}
+		else
+		{
+			$(globals.LoopSlideID).removeClass('loop-image').addClass('loopstop-image');
+		}
 	}
 	else
 	{
 		// pause image showing, ,means autoplay is working
 		globals.slideShowRunning = true;
-		$(globals.PlaySlideID).css("background-position", "-0px -128px");
+		if(globals.swipeIsOn)
+		{
+			$(globals.PlaySlideIDP).css("background-position", "-0px -128px");
+		}
+		else
+		{
+			$(globals.PlaySlideID).css("background-position", "-0px -128px");
+		}
 		globals.slideShowID = window.setInterval(SlideTransitionTimer, globals.slideDelay);
 		
 		// hide navigation
@@ -264,12 +287,26 @@ function slideShow() {
 	if(globals.loop == true)
 	{
 		globals.loop = false;
-		$(globals.LoopSlideID).removeClass('loop-image').addClass('loopstop-image');
+		if(globals.swipeIsOn)
+		{
+			$(globals.LoopSlideIDP).removeClass('loop-image').addClass('loopstop-image');
+		}
+		else
+		{
+			$(globals.LoopSlideID).removeClass('loop-image').addClass('loopstop-image');
+		}
 	}
 	else
 	{
 		globals.loop = true;
-		$(globals.LoopSlideID).removeClass('loopstop-image').addClass('loop-image');
+		if(globals.swipeIsOn)
+		{
+			$(globals.LoopSlideIDP).removeClass('loopstop-image').addClass('loop-image');
+		}
+		else
+		{
+			$(globals.LoopSlideID).removeClass('loopstop-image').addClass('loop-image');
+		}
 	} 
   }
   
@@ -312,55 +349,35 @@ function slideShow() {
 		return;
 	}
 	
-	if(globals.swipeIsOn)
-	{	
-		// check if the next slide is going to be the last slide
-		// animate the slide and reposition
-		if(globals.slideIndex == globals.slideImages.length - 1)
-		{
-				$(globals.slideImages[globals.slideIndex])
-				.animate(
-					{ left:'-=200' }, {
-						duration: 'slow',
-						easing: 'easeOutBack'
-					})
-				.animate(
-					{ left: 0 }, {
-	 
-						duration: 'slow',
-						easing: 'easeOutBack'
-					});
-			return;
-		}
-	}
-	else
+	
+	// check if the next slide is going to be the last slide
+	// animate the slide and reposition
+	if(globals.slideIndex == globals.slideImages.length - 1)
 	{
-		if(globals.slideIndex == globals.slideImages.length - 1)
+		// if loop is on, go to the first slide
+		globals.slideIndex = 0;
+		var l;
+		for(var i = globals.slideImages.length - 1;i >= 0;i--)
 		{
-			// if loop is on, go to the first slide
-			globals.slideIndex = 0;
-			var l;
-			for(var i = globals.slideImages.length - 1;i >= 0;i--)
-			{
-				// shift each slide right one step
-				var currentSlide = globals.slideImages[i];
-				l = $(currentSlide).width() * i;
-				currentSlide.style.left = l + "px";
-				//$(currentSlide).animate( {left:"+=" + l});
-				l = currentSlide.style.left;
-			}
-			return;
+			// shift each slide right one step
+			var currentSlide = globals.slideImages[i];
+			l = $(currentSlide).width() * i;
+			currentSlide.style.left = l + "px";
+			//$(currentSlide).animate( {left:"+=" + l});
+			//l = currentSlide.style.left;
 		}
+		return;
 	}
+
 	
 	++(globals.slideIndex);
-	var l;
+	//var l;
 	for(var i = 0;i < globals.slideImages.length;i++)
 	{
 		// shift each slide left
 		var currentSlide = globals.slideImages[i];
 		$(currentSlide).animate( {left:"-=" + $(currentSlide).width()});
-		l = globals.slideImages[i].style.left;
+		//l = globals.slideImages[i].style.left;
 	}
 }	// swipeSlidesLeft
 
