@@ -34,25 +34,10 @@ function slideShow() {
     return; // The solo slide image is already being displayed - exit now.
   }
   
-  // Assert: there's at least two slide images.
   
   initializeSlideShowMarkup();
   
-  //globals.wrapperObject.addEventListener('click', transitionSlides, false); // change on click
-  //$(globals.wrapperObject).click(transitionSlides);
-  //$(globals.wrapperObject).on("tap", transitionSlides);
-
-
-
-  //$(globals.wrapperObject).children().on("swipeleft", transitionSlides);
-  //$(globals.wrapperObject).children().on("swiperight", transitionSlides);
-  //globals.wrapperObject.addEventListener('touchend' transitionSlides, false); // change on tap
-  //globals.wrapperObject.addEventListener('click', toggleSlideShow, false); // If the user clicks a slide show image, it toggles the slide show on and off.
-  
-//  if (globals.buttonObject) {
-//    globals.buttonObject.addEventListener('click', toggleSlideShow, false); // This callback is used to toggle the slide show on and off.
-//  } 
-  
+ 
   //startSlideShow();
   
   /* FUNCTIONS ********************************************************************************************/
@@ -130,11 +115,7 @@ function slideShow() {
 	// hide the right button initially
 	$('#nav-right').css("visibility", "hidden");
 	
-    //globals.slideImages[0].style.opacity = 1; // Make the first slide visible.
-        
-//    if (globals.buttonObject) {
-//      globals.buttonObject.textContent = globals.buttonStopText;
-//    }
+
   } // initializeSlideShowMarkup
   
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -146,16 +127,6 @@ function slideShow() {
 	// All images are of same width
 
 	maxWidth = ($(globals.slideImages[0]).width() / $(globals.wrapperObject).parent().width()) * 100;
-	
-/*    var slideCount = globals.slideImages.length;
-    
-    for (var i = 0; i < slideCount; i++) {
-      if (globals.slideImages[i].width > maxWidth) {
-        maxWidth = globals.slideImages[i].width; // The width of the widest slide so far.
-        maxSlideIndex = i; // The slide with the widest width so far.
-      }
-    }
-*/
 
     //return globals.slideImages[maxSlideIndex].getBoundingClientRect().width; // Account for the image's border, padding, and margin values. Note that getBoundingClientRect() is always in units of pixels.
 	return maxWidth;
@@ -178,37 +149,6 @@ function slideShow() {
     return globals.slideImages[maxSlideIndex].getBoundingClientRect().height; // Account for the image's border, padding, and margin values. Note that getBoundingClientRect() is always in units of pixels.
   } // maxSlideHeight
 
-  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-/*  function startSlideShow() {
-    //globals.slideShowID = setInterval(transitionSlides, globals.slideDelay);                
-  } // startSlideShow
-*/
-  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  
-/*  function haltSlideShow() {
-    clearInterval(globals.slideShowID);   
-  } // haltSlideShow
-*/
-  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  
-/*  function toggleSlideShow() {
-    if (globals.slideShowRunning) {
-      haltSlideShow();
-//      if (globals.buttonObject) { 
-//        globals.buttonObject.textContent = globals.buttonStartText; 
-//      }
-    }
-    else {
-      startSlideShow();
-//      if (globals.buttonObject) { 
-//        globals.buttonObject.textContent = globals.buttonStopText; 
-//      }            
-    }
-    globals.slideShowRunning = !(globals.slideShowRunning);
-  } */// toggleSlideShow
-  
-  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
   function transitionSlidesRight() {
   
@@ -227,41 +167,6 @@ function slideShow() {
 		$(currentSlide).animate( {left:"+=" + $(currentSlide).width()});
 	}
   
-/*
-    var currentSlide = globals.slideImages[globals.slideIndex];
-    
-	if (globals.slideIndex <= 0 ) {
-      globals.slideIndex = globals.slideImages.length - 1;
-    }
-	else{
-		--(globals.slideIndex);
-	}
-
-    
-    var nextSlide = globals.slideImages[globals.slideIndex];
-    
-    var currentSlideOpacity = 1; // Fade the current slide out.
-    var nextSlideOpacity = 0; // Fade the next slide in.
-    var opacityLevelIncrement = 1 / globals.fadeDelay;
-    var fadeActiveSlidesID = setInterval(fadeActiveSlides, globals.fadeDelay);
-    
-    function fadeActiveSlides() {
-      currentSlideOpacity -= opacityLevelIncrement;
-      nextSlideOpacity += opacityLevelIncrement;
-      
-      // console.log(currentSlideOpacity + nextSlideOpacity); // This should always be very close to 1.
-      
-      if (currentSlideOpacity >= 0 && nextSlideOpacity <= 1) {
-        currentSlide.style.opacity = currentSlideOpacity;
-        nextSlide.style.opacity = nextSlideOpacity; 
-      }
-      else {
-        currentSlide.style.opacity = 0;
-        nextSlide.style.opacity = 1; 
-        clearInterval(fadeActiveSlidesID);
-      }        
-    } // fadeActiveSlides
-*/
 
   } // transitionSlidesRight
   
@@ -285,41 +190,6 @@ function slideShow() {
 		$(currentSlide).animate( {left:"-=" + $(currentSlide).width()});
 	}
 	
-    //var currentSlide = globals.slideImages[globals.slideIndex];
-    
-    
-//    if (globals.slideIndex >= globals.slideImages.length) {
-//     globals.slideIndex = 0;
-//    }
-    
-    //var nextSlide = globals.slideImages[globals.slideIndex];
-    
-    //var currentSlideOpacity = 1; // Fade the current slide out.
-    //var nextSlideOpacity = 0; // Fade the next slide in.
-    //var opacityLevelIncrement = 1 / globals.fadeDelay;
-    //var fadeActiveSlidesID = setInterval(fadeActiveSlides, globals.fadeDelay);
-    
-	//$(currentSlide).animate( {left:"-=" + $(currentSlide).width()});
-	//currentSlide.style.opacity = 0;
-	//nextSlide.style.opacity = 1;
-	//$(nextSlide).animate( {left:"-=" + $(nextSlide).width()});
-	
-/*    function fadeActiveSlides() {
-      currentSlideOpacity -= opacityLevelIncrement;
-      nextSlideOpacity += opacityLevelIncrement;
-      
-      // console.log(currentSlideOpacity + nextSlideOpacity); // This should always be very close to 1.
-	  
-      if (currentSlideOpacity >= 0 && nextSlideOpacity <= 1) {
-        currentSlide.style.opacity = currentSlideOpacity;
-        nextSlide.style.opacity = nextSlideOpacity; 
-      }
-      else {
-        currentSlide.style.opacity = 0;
-        nextSlide.style.opacity = 1; 
-        clearInterval(fadeActiveSlidesID);
-      }
-    }  // fadeActiveSlides*/
   } // transitionSlidesLeft
   
     function swipeSlidesRight() {
