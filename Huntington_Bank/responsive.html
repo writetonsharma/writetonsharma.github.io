@@ -5,6 +5,7 @@
 <meta name="meta_date" content="07/20/2015"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>CheckingAgreement</title>
+<script src=".\js\jquery-min.js" type="text/javascript"></script>
 <link href="./css/responsive.html_common.css" rel="stylesheet"/>
 <link href="./css/responsive.html_Phone.css" media="screen and (min-width: 280px)" rel="stylesheet"/>
 <link href="./css/responsive.html_Tablet.css" media="screen and (min-width: 520px)" rel="stylesheet"/>
@@ -142,10 +143,63 @@
 <span class="f2  span4 " >® and Huntington® are federally registered service marks of Huntington Bancshares Incorporated.</span></div>
 <div class="normal div4" ><span class="f2  span4 " >© 2013, Huntington Bancshares Incorporated.</span></div>
 <div class="normal div4" ><span class="f2 span1" >&nbsp;</span></div>
+
+<!-- Add the user response controls here -->
+<br class="br4"/>
+<form id="frm" class="f1" >
+<input type="radio" name="response"  value="yes" /> I agree with the terms and conditions
+<br class="br4"/>
+<input type="radio" name="response" value="no" checked="checked" /> I do not agree with the terms and conditions
+<br class="br4"/>
+<br class="br4"/>
+<!--input type="submit" value="Submit" /-->
+<input type="button" id="btn" value="Submit" />
+</form>
+<div id="frmdiv" class="normal"></div>
+<br class="br4"/>
+
+<!-- Add the user response controls here -->
+
 <footer>
 <div class="normal div4" ><span class="f2  span4 " >Page</span><span class="f2  span4 " >&nbsp;</span><span class="f2  span4 " >1</span><span class="f2  span4 " >&nbsp;of</span><span class="f2  span4 " >&nbsp;</span><span class="f2  span4 " >8</span></div>
 </footer>
 </div>
+
+<script type="text/javascript">
+
+$(document).ready(function() {               
+    $('#btn').click(function(event) {  
+		r = $('input[name=response]:checked').val();
+		$.get('http://localhost:8080/servlets/servlet/ServletClass',{response:r}, function(responseText) { 
+            $('#frm').css("display", "none");
+			$('#frmdiv').append(responseText).css("background-color", "#ff0000").animate({ fontSize: "24px" }, 1500 );
+			
+        });
+    });
+});
+
+
+/*
+$(document).ready(function() {               
+    $('#btn').click(function(event) { 
+		$.ajax({
+			url:'http://localhost:8080/servlets/servlet/ServletClass',
+			dataType: 'jsonp',
+			success:function(json){
+				 // do stuff with json (in this case an array)
+				 alert("Success"+json);
+			},
+			error:function(result){
+				alert("error");
+			}     
+		});
+
+    });
+});
+*/
+
+</script>
+
 </body>
 </html>
 
