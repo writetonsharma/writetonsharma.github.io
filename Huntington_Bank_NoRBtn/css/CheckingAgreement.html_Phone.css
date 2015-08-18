@@ -1,0 +1,197 @@
+﻿@charset "utf-8";
+
+/*
+	Designer version 15.0.0 build 7 generated CSS file
+	Generation Date: 08/18/2015
+	Document Name: CheckingAgreement.html
+
+	## WARNING: DO NOT EDIT THE FILE!! ##
+*/
+
+body {
+	background-color:#fff;
+}div.div3 {
+	z-index:0;		
+	overflow:auto;
+	position:relative;
+	width:90.62%;
+}
+div.div4 {
+	text-align:left;
+	line-height:1.00;
+	display: block;
+}
+.f1 {
+	font-family:Arial;
+	font-size:0.8333em;
+	font-style:normal;
+	font-weight:normal;
+	line-height:100%;
+}
+div.Document_Title_Paragraph {
+	text-align:center;
+	line-height:1.00;
+	display: block;
+}
+.f2 {
+	font-family:Times New Roman;
+	font-size:1.0000em;
+	font-style:normal;
+	font-weight:bold;
+	line-height:100%;
+}
+span.Document_Title_Text {
+	line-height:1.00;
+	display: inline;
+}
+div.Indented_Spaced_Paragraph {
+	text-align:justify;
+	padding-bottom:0.67%;
+	text-indent:1.33%;
+	line-height:10pt;
+	display: block;
+}
+div.Non-indented_Spaced_Paragraph {
+	text-align:left;
+	padding-bottom:0.67%;
+	line-height:0.84;
+	display: block;
+}
+.f3 {
+	font-family:Times New Roman;
+	font-size:0.8333em;
+	font-style:normal;
+	font-weight:normal;
+	line-height:100%;
+}
+span.span2 {
+	line-height:0.84;
+	display: inline;
+}
+div.Notice_Heading_ParagraphBorderStyle {
+	width:100.00%;
+	border-top:1.00px solid #000000;
+	border-bottom:1.00px solid #000000;
+	border-left:1.00px solid #000000;
+	border-right:1.00px solid #000000;
+	padding-top:1.00px;
+	padding-left:5.00px;
+	padding-right:5.00px;
+	padding-bottom:1.00px;
+	display: block;
+	border-spacing:0px;
+	border-collapse:collapse;
+}
+div.Notice_Heading_Paragraph {
+	text-align:center;
+	line-height:1.00;
+}
+.f4 {
+	font-family:Times New Roman;
+	font-size:0.8333em;
+	font-style:normal;
+	font-weight:bold;
+	line-height:100%;
+}
+span.Notice_Heading_Text_ {
+	line-height:1.00;
+	display: inline;
+}
+div.Notice_Body_Paragraph {
+	text-align:left;
+	line-height:1.00;
+}
+span.Notice_Body_Text {
+	line-height:1.00;
+	display: inline;
+}
+div.Heading_Paragraph {
+	text-align:left;
+	padding-top:0.67%;
+	line-height:1.00;
+	display: block;
+}
+span.Heading_Text {
+	line-height:1.00;
+	display: inline;
+}
+div.Indented_Paragraph {
+	text-align:justify;
+	text-indent:1.33%;
+	line-height:10pt;
+	display: block;
+}
+span.span3 {
+	line-height:10pt;
+	display: inline;
+}
+span.Normal_Text {
+	line-height:10pt;
+	display: inline;
+}
+span.span4 {
+	line-height:1.00;
+	display: inline;
+}
+div.Bullet {
+	text-align:justify;
+	padding-bottom:0.67%;
+	padding-left:4.53%;
+	text-indent:-1.20%;
+	line-height:10pt;
+	display: block;
+}
+div.div6 {
+	width:100.00%;
+	border-top:3.00px solid #000000;
+	border-bottom:0.00px solid #000000;
+	border-left:0.00px solid #000000;
+	border-right:0.00px solid #000000;
+	padding-top:1.00px;
+	padding-left:5.00px;
+	padding-right:5.00px;
+	padding-bottom:1.00px;
+	display: block;
+	border-spacing:0px;
+	border-collapse:collapse;
+}
+div.div7 {
+	text-align:left;
+	line-height:1.00;
+}
+div.div9 {
+	width:100.00%;
+	border-top:0.00px solid #000000;
+	border-bottom:3.00px solid #000000;
+	border-left:0.00px solid #000000;
+	border-right:0.00px solid #000000;
+	padding-top:1.00px;
+	padding-left:5.00px;
+	padding-right:5.00px;
+	padding-bottom:1.00px;
+	display: block;
+	border-spacing:0px;
+	border-collapse:collapse;
+}
+div.div10 {
+	text-align:center;
+	line-height:1.00;
+	display: block;
+}
+img.img1 {
+	z-index:1;		
+	width:30.8267%;
+	float:none;
+	display: inline;
+}
+img.img2 {
+	z-index:1;		
+	width:3.0533%;
+	float:none;
+	display: inline;
+}
+div.Footer_Paragraph {
+	text-align:center;
+	line-height:1.00;
+	display: none;
+}
