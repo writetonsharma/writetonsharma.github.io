@@ -34,7 +34,7 @@ jQuery(document).on("mobileinit", function() {
 <tr>
 <td class="td3" >
 <div id="slideShowMessages1">
-	<table class="normal table6 umslide" name="firstTable" >
+	<table class="normal table6 umslide1" name="firstTable" >
 	<tbody>
 	<tr>
 	<td>
@@ -50,7 +50,7 @@ jQuery(document).on("mobileinit", function() {
 	</tr>
 	</tbody>
 	</table>
-	<table class="normal table6 umslide" name="Summary of Account 5">
+	<table class="normal table6 umslide1" name="Summary of Account 5">
 	<tbody>
 	<tr>
 	<td class="td9" >
@@ -68,8 +68,8 @@ jQuery(document).on("mobileinit", function() {
 	</tr>
 	</tbody>
 	</table><br class="br1" />	
-	<img class="img7 umslide" src="./Images/fis-logo.png"  alt=""/>
-	<video class="umslide" controls preload="none">
+	<img class="img7 umslide1" src="./Images/fis-logo.png"  alt=""/>
+	<video class="umslide1" controls preload="none">
 		<source src="./videos/fis_video.mp4" type="video/mp4" />
 		Your browser does not support the video tag.
 	</video>
@@ -104,7 +104,7 @@ CreateUMessage1 = function()
 			autoStartPlay:true};
 
 
-	var um = new UnlimitedMessages("slideShowMessages1", opts);
+	var um = new UnlimitedMessages("slideShowMessages1", ".umslide1", opts);
 }; CreateUMessage1();
 
 </script>

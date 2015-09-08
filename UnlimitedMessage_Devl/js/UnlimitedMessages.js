@@ -8,11 +8,11 @@ Copyright (c) 2015. FIS.
 
 (function() {		//Begin UnlimitedMessages
 
-	UnlimitedMessages = function(element, opts)
+	UnlimitedMessages = function(element, subElements, opts)
 	{
 		// initialization
 		this.setDefaults();
-		this.setOpts(this, element, opts);
+		this.setOpts(this, element, subElements, opts);
 		this.setPlaceholderObject();
 		this.initEvents();  
 
@@ -37,6 +37,7 @@ Copyright (c) 2015. FIS.
 	{
 		this.timeBetweenMessages = 5000; // The time interval between consecutive slides.
 		this.placeholderID = undefined; // ID of the placeholder which contains all the messages
+		this.subElementID = undefined; // ID of the messages inside placeholder
 		this.placeholderObject = null; // Object which contains all the messages
 		
 		this.showPlayButton = true;
@@ -64,9 +65,10 @@ Copyright (c) 2015. FIS.
 	};
 
 	
-	UnlimitedMessages.prototype.setOpts = function(obj, element, options)
+	UnlimitedMessages.prototype.setOpts = function(obj, element, subElements, options)
 	{
 		obj.placeholderID = element;
+		obj.subElementID = subElements;
 		
 		if (!options)
 			return;
@@ -112,7 +114,7 @@ Copyright (c) 2015. FIS.
 
 		if (self.placeholderObject) 
 		{
-			self.messageObjCollection = $(self.placeholderObject).children(".umslide") ? $(self.placeholderObject).children(".umslide") : [];
+			self.messageObjCollection = $(self.placeholderObject).children(self.subElementID) ? $(self.placeholderObject).children(self.subElementID) : [];
 		}
 	}; // initEvents
  
