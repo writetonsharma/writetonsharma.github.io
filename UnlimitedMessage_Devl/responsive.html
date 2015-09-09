@@ -74,10 +74,68 @@ jQuery(document).on("mobileinit", function() {
 		Your browser does not support the video tag.
 	</video>
 
-	<div id="nav-right"></div>
-	<div id="nav-left"></div>
-	<div id="nav-play" alt="play"></div>
+	<div id="nav-right1"></div>
+	<div id="nav-left1"></div>
+	<div id="nav-play1" alt="play"></div>
 	<!--<div id="nav-loop" class="loop-image" alt="loop"></div>-->
+</div>
+<div class="normal div8" ><span class="f0 span1" >&nbsp;</span></div>
+</td>
+</tr>
+</tbody>
+</table><br class="br1" />
+
+
+<!-- second umessage -->
+
+<table class="normal mainTable1" style="margin-top: 10px;" name="Main Table 1">
+<tbody>
+<tr>
+<td class="td3" >
+<div id="slideShowMessages2">
+	<table class="normal table6 umslide2" name="firstTable" >
+	<tbody>
+	<tr>
+	<td>
+		<div class="normal div6" ><span class="f1 span2 " >The Internet took off quicker than anyone would have predicted, growing like crazy. Now, for the past few years, mobile growth has exploded onto the scene. The growth of mobile Internet usage is also far out pacing that of general Internet usage growth.</span></div>
+		<div class="normal div6" ><br class="br1"/><span class="f1 span1" >&nbsp;</span></div>
+		<div class="normal div6" ><span class="f1 span2 " >These days it is hard to find someone who doesn’t own a mobile device, or multiple, connected to the Internet. In the UK there are more mobile phones than people, and should trends continue mobile Internet usage will surpass that of desktop Internet usage within the year.</span></div>
+		<div class="normal div6" ><br class="br1"/><span class="f1 span1" >&nbsp;</span></div>
+		<div class="normal div6" ><span class="f1 span2 " >With the growth in mobile Internet usage comes the question of how to build websites suitable for all users. The industry response to this question has become responsive web design, also known as RWD.</span></div>
+		<div class="normal div6" ><br class="br1"/><span class="f1 span1" >&nbsp;</span></div>
+		<div class="normal div6" ><span class="f51922 span3 " >Responsive Overview</span></div>
+		<div class="normal div6" ><br class="br1"/><span class="f1 span1" >&nbsp;</span></div>
+	</td>
+	</tr>
+	</tbody>
+	</table>
+	<table class="normal table6 umslide2" name="Summary of Account 5">
+	<tbody>
+	<tr>
+	<td class="td9" >
+	<div class="normal div7" ><span class="f2  span2 " >Important information</span></div>
+	</td>
+	</tr>
+	<tr>
+	<td class="td23" >
+	<div class="normal div15" ><span class="f5 c2 span2 " >Brokerage Services?&nbsp;</span></div>
+	<div class="normal div6" ><span class="f7  span2 " >In today&#39;s environment, it&#39;s important that your investment decisions be carried out quickly and professionally.</span></div>
+	<div class="normal div6" ><span class="f1  span2 " > </span></div>
+	<div class="normal div6" ><span class="f7  span2 " >You will have access to a wide range of investments and the convenience of one provider conducting all your investment activities. Please stop by a branch or visit  for additional information.</span></div>
+	<div class="normal div6" ><span class="f9 span1" >&nbsp;</span></div>
+	</td>
+	</tr>
+	</tbody>
+	</table><br class="br1" />	
+	<img class="img7 umslide2" src="./Images/fis-logo.png"  alt=""/>
+	<video class="umslide2" controls preload="none">
+		<source src="./videos/fis_video.mp4" type="video/mp4" />
+		Your browser does not support the video tag.
+	</video>
+
+	<div id="nav-right2"></div>
+	<div id="nav-left2"></div>
+	<div id="nav-play2" alt="play"></div>
 </div>
 <div class="normal div8" ><span class="f0 span1" >&nbsp;</span></div>
 </td>
@@ -96,16 +154,38 @@ jQuery(document).on("mobileinit", function() {
 CreateUMessage1 = function()
 {
 	var opts = {timeBetweenMessages:5000,
-			showPlayButton:true,
-			overflowOpt:"visible",
-			allowSwipe:true,
-			showArrows:true,
-			loopMessages:true,
-			autoStartPlay:true};
+					showPlayButton:true,
+					overflowOpt:"visible",
+					allowSwipe:true,
+					showArrows:true,
+					loopMessages:true,
+					autoStartPlay:true,
+					playButtonID:"#nav-play1",
+					leftArrowID:"#nav-left1",
+					rightArrowID:"#nav-right1"};
 
 
 	var um = new UnlimitedMessages("slideShowMessages1", ".umslide1", opts);
 }; CreateUMessage1();
+
+
+CreateUMessage2 = function()
+{
+	var opts = {timeBetweenMessages:8000,
+					showPlayButton:true,
+					overflowOpt:"visible",
+					allowSwipe:true,
+					showArrows:true,
+					loopMessages:true,
+					autoStartPlay:true,
+					playButtonID:"#nav-play2",
+					leftArrowID:"#nav-left2",
+					rightArrowID:"#nav-right2"};
+
+
+
+	var um = new UnlimitedMessages("slideShowMessages2", ".umslide2", opts);
+}; CreateUMessage2();
 
 </script>
 

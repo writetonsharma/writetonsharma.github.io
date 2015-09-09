@@ -14,6 +14,9 @@ Copyright (c) 2015. FIS.
 		this.setDefaults();
 		this.setOpts(this, element, subElements, opts);
 		this.setPlaceholderObject();
+		
+		this.setupButtons();
+		
 		this.initEvents();  
 
 		
@@ -41,7 +44,7 @@ Copyright (c) 2015. FIS.
 		this.placeholderObject = null; // Object which contains all the messages
 		
 		this.showPlayButton = true;
-		this.playButtonID = "#nav-play";		// play/pause button button
+		this.playButtonID = undefined;		// play/pause button button
 		this.buttonStartText = "Start Slides"; // Text used in the slide show toggle button.
 		this.buttonStopText = "Stop Slides"; // Text used in the slide show toggle button.   
 		
@@ -50,8 +53,8 @@ Copyright (c) 2015. FIS.
 		this.allowSwipe = true;
 		
 		this.showArrows = true;
-		this.leftArrowID = "#nav-left";		// left arrow
-		this.rightArrowID = "#nav-right";	// right arrow
+		this.leftArrowID = undefined;		// left arrow
+		this.rightArrowID = undefined;	// right arrow
 		
 		this.messageObjCollection = []; // Will contain all of the slide Message objects.
 		this.slideShowID = null; // A setInterval() ID value used to stop the slide show.
@@ -62,6 +65,9 @@ Copyright (c) 2015. FIS.
 		this.autoStartPlay = true;
 		this.slideHeights = [];
 		this.slideWidths = [];
+		
+		this.iconWidth = 64;
+		this.iconHeight = 64;
 	};
 
 	
@@ -86,6 +92,51 @@ Copyright (c) 2015. FIS.
 	UnlimitedMessages.prototype.setPlaceholderObject = function()
 	{
 		this.placeholderObject = (document.getElementById(this.placeholderID) ? document.getElementById(this.placeholderID) : null);
+		if (this.placeholderObject) 
+		{
+			this.messageObjCollection = $(this.placeholderObject).children(this.subElementID) ? $(this.placeholderObject).children(this.subElementID) : [];
+		}
+	};
+	
+	
+	UnlimitedMessages.prototype.setupButtons = function()
+	{
+		//width = ((this.iconWidth / this.placeholderObject.offsetWidth) * 100) + "%";
+		//height = ((this.iconHeight / this.placeholderObject.offsetHeight) * 100) + "%";
+		
+		
+		$(this.leftArrowID).css({
+					"position":"absolute",
+					"width":this.iconWidth,
+					"height":this.iconHeight,
+					"display":"inline-block",
+					"margin":0,
+					"background-image": "url(./Images/navs1.png)",
+					"z-index": 0,
+					"background-position":"0 -64px"
+		});
+		
+		$(this.rightArrowID).css({
+					"position":"absolute",
+					"width":this.iconWidth,
+					"height":this.iconHeight,
+					"display":"inline-block",
+					"margin":0,
+					"background-image": "url(./Images/navs1.png)",
+					"z-index": 0,
+					"background-position":"-64px -64px"
+		});
+		$(this.playButtonID).css({
+					"position":"absolute",
+					"width":this.iconWidth,
+					"height":this.iconHeight,
+					"display":"inline-block",
+					"margin":0,
+					"background-image": "url(./Images/navs1.png)",
+					"z-index": 0,
+					"background-position":"0 -128px"
+		});	
+		
 	};
 	
 	
@@ -102,20 +153,25 @@ Copyright (c) 2015. FIS.
 		// Auto loop timer event.
 		self.slideShowID = window.setInterval(self.slideTransitionTimer, self.timeBetweenMessages, this);
 		
-		$(self.placeholderObject).on("mouseenter", [this], self.mouseOverPlaceholder);
-		$(self.placeholderObject).on("mouseleave", [this], self.mouseOutPlaceholder);
+		// hover over placeholder
+		$(self.placeholderObject).on("mouseenter", [this], self.mouseEnterPlaceholder);
+		$(self.placeholderObject).on("mouseleave", [this], self.mouseLeavePlaceholder);
 		
 		
-		//$(self.LoopSlideID).attachEvent(
-		//$(self.LoopSlideID).attachEvent("onclick", function(e) { return self.SlidesLoop(e); }, false);
+		// hover over buttons
+		$(self.leftArrowID).on("mouseenter", [this], self.mouseEnterLeftArrow);
+		$(self.leftArrowID).on("mouseleave", [this], self.mouseLeaveLeftArrow);
+		
+		$(self.rightArrowID).on("mouseenter", [this], self.mouseEnterRightArrow);
+		$(self.rightArrowID).on("mouseleave", [this], self.mouseLeaveRightArrow);
+		
+		//$(self.playButtonID).on("mouseenter", [this], self.mouseEnterPlayButton);
+		//$(self.leftArrowID).on("mouseleave", [this], self.mouseLeavePlayButton);
+		
 		//$(self.placeholderObject).on("swipeleft", $(self.swipeLeft()));
-		//$(self.placeholderObject).on("swiperight", $(self.swipeRight()));		
-		//this.buttonObject = (document.getElementById(this.buttonID) ? document.getElementById(this.buttonID) : null); 
+		//$(self.placeholderObject).on("swiperight", $(self.swipeRight()));
 
-		if (self.placeholderObject) 
-		{
-			self.messageObjCollection = $(self.placeholderObject).children(self.subElementID) ? $(self.placeholderObject).children(self.subElementID) : [];
-		}
+
 	}; // initEvents
  
 
@@ -232,6 +288,7 @@ Copyright (c) 2015. FIS.
 	
 	UnlimitedMessages.prototype.hideRightArrow = function(bHide)
 	{
+		var obj = $(this.rightArrowID);
 		if(bHide)
 		{
 			$(this.rightArrowID).hide();
@@ -290,9 +347,9 @@ Copyright (c) 2015. FIS.
 			return;
 		}
 		
-		self.slideMessageRight();
-		
+		self.slideMessageRight();		
 		self.updateButtonVisibility();
+		self.updateButtonPosition();
 
 	}; // rightArrowClick
   
@@ -308,9 +365,9 @@ Copyright (c) 2015. FIS.
 			return;
 		}
 		
-		self.slideMessageLeft();
-		
+		self.slideMessageLeft();		
 		self.updateButtonVisibility();
+		self.updateButtonPosition();
 
 	}; // leftArrowClick
   
@@ -390,7 +447,8 @@ Copyright (c) 2015. FIS.
 		}	  
 	};		// playButtonClick
   
-	UnlimitedMessages.prototype.mouseOverPlaceholder = function(e)
+  
+	UnlimitedMessages.prototype.mouseEnterPlaceholder = function(e)
 	{
 		var self = e.data[0];
 		window.clearInterval(self.slideShowID);
@@ -407,7 +465,7 @@ Copyright (c) 2015. FIS.
 	};
 	
 	
-	UnlimitedMessages.prototype.mouseOutPlaceholder = function(e)
+	UnlimitedMessages.prototype.mouseLeavePlaceholder = function(e)
 	{
 		var self = e.data[0];
 		
@@ -520,7 +578,7 @@ Copyright (c) 2015. FIS.
 
 		self.slideMessageLeft();
 	
-};	// swipeLeft
+	};	// swipeLeft
 
 
 	UnlimitedMessages.prototype.slideMessageLeft = function()
@@ -602,6 +660,7 @@ Copyright (c) 2015. FIS.
 		this.updateButtonPosition();
 	};
 	
+	
 	UnlimitedMessages.prototype.updatePlaceHolderDimensions = function()
 	{
 		$(this.placeholderObject).animate({height: this.slideHeights[this.currMessageIndex] + 48 + "px",
@@ -620,6 +679,48 @@ Copyright (c) 2015. FIS.
 		height = $(this.playButtonID)[0].offsetHeight;
 		$(this.playButtonID).css({"position":"absolute", "left":width, "bottom": height});
 		
-	}
+	};
+	
+	
+	UnlimitedMessages.prototype.mouseEnterLeftArrow = function(e)
+	{
+		var self = e.data[0];
+		$(self.leftArrowID).css({"background-position":"0 0"});
+	};
+	
+	
+	UnlimitedMessages.prototype.mouseLeaveLeftArrow = function(e)
+	{
+		var self = e.data[0];
+		$(self.leftArrowID).css({"background-position":"0 -64px"});
+	};
+	
+	
+	UnlimitedMessages.prototype.mouseEnterRightArrow = function(e)
+	{
+		var self = e.data[0];
+		$(self.rightArrowID).css({"background-position":"-64px 0"});
+	};
+	
+	
+	UnlimitedMessages.prototype.mouseLeaveRightArrow = function(e)
+	{
+		var self = e.data[0];
+		$(self.rightArrowID).css({"background-position":"-64px -64px"});
+	};
+	
+/*
+	UnlimitedMessages.prototype.mouseEnterPlayButton = function(e)
+	{
+		var self = e.data[0];
+	};
+	
+	UnlimitedMessages.prototype.mouseLeavePlayButton = function(e)
+	{
+		var self = e.data[0];
+		//$(self.leftArrowID).css({"background-position":"0 -128px"});
+	};
+*/	
+	
 		
 })();		// End Unlimited Messages

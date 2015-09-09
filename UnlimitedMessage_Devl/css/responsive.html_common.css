@@ -100,46 +100,8 @@ div.div2 {
 br.br1 {
 	clear:left;
 }
-#nav-right, #nav-left, #nav-play{
-    position: absolute;
-    width:64px;
-    height:64px;
-    display:inline-block;
-    margin:0;
-    background-image: url(../Images/navs.png);
-	z-index: 0;
-}
-#nav-loop {
-	position: absolute;
-	right: 0px;
-    width:64px;
-    height:64px;
-    display:inline-block;
-    margin:0;
-	background-repeat: no-repeat;
-	z-index:0;
-}
-
-.loop-image {
-	background-image: url("../Images/loop.png");
-}
-.loopstop-image {
-	background-image: url("../Images/loop-stop.png");
-}
 
 
-#nav-left {
-    background-position:0 -64px;
-}
-#nav-left:hover {background-position:0 0;}
 
-#nav-right {
-    background-position:-64px -64px;
-}
-#nav-right:hover {background-position:-64px 0;}
-
-#nav-play {
-	background-position: -0px -128px;
-}
 
 
