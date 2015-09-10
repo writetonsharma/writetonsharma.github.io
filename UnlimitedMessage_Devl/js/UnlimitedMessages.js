@@ -199,8 +199,11 @@ Copyright (c) 2015. FIS.
 		$(self.playButtonID).on("mouseenter", [this], self.mouseEnterPlayButton);
 		$(self.leftArrowID).on("mouseleave", [this], self.mouseLeavePlayButton);
 		
-		//$(self.placeholderObject).on("swipeleft", $(self.swipeLeft()));
-		//$(self.placeholderObject).on("swiperight", $(self.swipeRight()));
+		if(self.allowSwipe)
+		{
+			$(self.placeholderObject).on("swipeleft", [this], self.swipeLeft);
+			$(self.placeholderObject).on("swiperight", [this], self.swipeRight);
+		}
 
 
 	}; // initEvents
@@ -509,7 +512,7 @@ Copyright (c) 2015. FIS.
   
 	UnlimitedMessages.prototype.swipeRight = function(e)
 	{
-		var self = e;
+		var self = e.data[0];
 		
 		// if loop is not on and its first slide, do nothing
 		if(self.currMessageIndex == 0 && !self.loopMessages)
@@ -558,12 +561,12 @@ Copyright (c) 2015. FIS.
 	UnlimitedMessages.prototype.swipeLeft = function(e)
 	{
 	
-		var self = e;		
+		var self = e.data[0];
 		
 		// if loop is not on and its last slide, do nothing
 		if(self.currMessageIndex == self.messageObjCollection.length - 1 
 			&& !self.loopMessages)
-		{				
+		{
 			return;
 		}	
 
