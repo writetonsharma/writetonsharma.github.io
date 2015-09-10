@@ -62,7 +62,8 @@ Copyright (c) 2015. FIS.
 		this.currMessageIndex = 0; // The index of the current Message visible.
 		this.loopMessages = true;		// is slide show in loop
 		
-		this.autoStartPlay = true;
+		this.autoStartPlay = true;		// start the slide show on load
+		this.isAlreadyPlaying = false;	// is slide show already running. It is possible that we try to set timer multiple times
 		this.slideHeights = [];
 		this.slideWidths = [];
 		
@@ -103,8 +104,14 @@ Copyright (c) 2015. FIS.
 	{
 		//width = ((this.iconWidth / this.placeholderObject.offsetWidth) * 100) + "%";
 		//height = ((this.iconHeight / this.placeholderObject.offsetHeight) * 100) + "%";
-		
-		
+		this.setupLeftArrow();
+		this.setupRightArrow();
+		this.setupPlayButton();		
+	};
+	
+	
+	UnlimitedMessages.prototype.setupLeftArrow = function()
+	{
 		$(this.leftArrowID).css({
 					"position":"absolute",
 					"width":this.iconWidth,
@@ -115,7 +122,11 @@ Copyright (c) 2015. FIS.
 					"z-index": 0,
 					"background-position":"0 -64px"
 		});
-		
+	};
+	
+	
+	UnlimitedMessages.prototype.setupRightArrow = function()
+	{
 		$(this.rightArrowID).css({
 					"position":"absolute",
 					"width":this.iconWidth,
@@ -126,7 +137,14 @@ Copyright (c) 2015. FIS.
 					"z-index": 0,
 					"background-position":"-64px -64px"
 		});
-		$(this.playButtonID).css({
+	};
+	
+	
+	UnlimitedMessages.prototype.setupPlayButton = function()
+	{
+		if(this.autoStartPlay)
+		{
+			$(this.playButtonID).css({
 					"position":"absolute",
 					"width":this.iconWidth,
 					"height":this.iconHeight,
@@ -135,8 +153,21 @@ Copyright (c) 2015. FIS.
 					"background-image": "url(./Images/navs1.png)",
 					"z-index": 0,
 					"background-position":"0 -128px"
-		});	
-		
+		});
+		}
+		else
+		{
+			$(this.playButtonID).css({
+					"position":"absolute",
+					"width":this.iconWidth,
+					"height":this.iconHeight,
+					"display":"inline-block",
+					"margin":0,
+					"background-image": "url(./Images/navs1.png)",
+					"z-index": 0,
+					"background-position":"64px -128px"
+			});
+		}
 	};
 	
 	
@@ -151,7 +182,7 @@ Copyright (c) 2015. FIS.
 		
 		
 		// Auto loop timer event.
-		self.slideShowID = window.setInterval(self.slideTransitionTimer, self.timeBetweenMessages, this);
+		self.startTransitionTimer();
 		
 		// hover over placeholder
 		$(self.placeholderObject).on("mouseenter", [this], self.mouseEnterPlaceholder);
@@ -165,8 +196,8 @@ Copyright (c) 2015. FIS.
 		$(self.rightArrowID).on("mouseenter", [this], self.mouseEnterRightArrow);
 		$(self.rightArrowID).on("mouseleave", [this], self.mouseLeaveRightArrow);
 		
-		//$(self.playButtonID).on("mouseenter", [this], self.mouseEnterPlayButton);
-		//$(self.leftArrowID).on("mouseleave", [this], self.mouseLeavePlayButton);
+		$(self.playButtonID).on("mouseenter", [this], self.mouseEnterPlayButton);
+		$(self.leftArrowID).on("mouseleave", [this], self.mouseLeavePlayButton);
 		
 		//$(self.placeholderObject).on("swipeleft", $(self.swipeLeft()));
 		//$(self.placeholderObject).on("swiperight", $(self.swipeRight()));
@@ -315,25 +346,36 @@ Copyright (c) 2015. FIS.
 	
 	UnlimitedMessages.prototype.updateButtonVisibility = function()
 	{
-		if(this.currMessageIndex == 0)
+		if(this.loopMessages)
 		{
-			// first slide showing, hide right and show left
-			this.hideRightArrow(true);
-			this.hideLeftArrow(false);
-		}
-		else if(this.currMessageIndex == this.messageObjCollection.length - 1)
-		{
-			// last slide showing, dont show left button
+			// show buttons all the time when looping
 			this.hideRightArrow(false);
-			this.hideLeftArrow(true);
+			this.hideLeftArrow(false);
+			this.hidePlayButton(false);
 		}
 		else
 		{
-			// any middle slide showing, show both buttons
-			this.hideRightArrow(false);
-			this.hideLeftArrow(false);
+			if(this.currMessageIndex == 0)
+			{
+				// first slide showing, hide right and show left
+				this.hideRightArrow(true);
+				this.hideLeftArrow(false);
+			}
+			else if(this.currMessageIndex == this.messageObjCollection.length - 1)
+			{
+				// last slide showing, dont show left button
+				this.hideRightArrow(false);
+				this.hideLeftArrow(true);
+			}
+			else
+			{
+				// any middle slide showing, show both buttons
+				this.hideRightArrow(false);
+				this.hideLeftArrow(false);
+			}
+			this.hidePlayButton(false);
 		}
-		this.hidePlayButton(false);
+		
 	};
 	
 	
@@ -376,74 +418,20 @@ Copyright (c) 2015. FIS.
 	{
 		var self = e.data[0];
 	  
-		if(self.slideShowRunning == true)
+		if(self.autoStartPlay == true)
 		{
 			// play Message showing, means the autoplay is stopped
-			self.slideShowRunning = false;
-			/*
-			if(self.allowSwipe)
-			{
-				$(self.playButtonIDP).css("background-position", "-64px -128px");
-			}
-			else
-			{
-				$(self.playButtonID).css("background-position", "-64px -128px");
-			}
-			*/
-			window.clearInterval(self.slideShowID)
-			
-			// show navigation
-			
-			if(self.currMessageIndex == 0)
-			{
-				// first slide showing, dont show right button
-				$(self.leftArrowID).css("visibility", "visible");
-			}
-			else if(self.currMessageIndex == self.messageObjCollection.length - 1)
-			{
-				// last slide showing, dont show left button
-				$(self.rightArrowID).css("visibility", "visible");
-			}
-			else
-			{
-				// any middle slide showing, show both buttons
-				$(self.leftArrowID).css("visibility", "visible");
-				$(self.rightArrowID).css("visibility", "visible");
-			}
-
-		/*		
-			// unloop button on
-			self.loopMessages = false;
-			if(self.allowSwipe)
-			{
-				$(self.LoopSlideIDP).removeClass('loop-Message').addClass('loopstop-Message');
-			}
-			else
-			{
-				$(self.LoopSlideID).removeClass('loop-Message').addClass('loopstop-Message');
-			}
-			*/
+			self.autoStartPlay = false;
+			self.setupPlayButton();
+			self.clearTransitionTimer();
 		}
 		else
 		{
 			// pause Message showing, ,means autoplay is working
-			self.slideShowRunning = true;
-			/*
-			if(self.allowSwipe)
-			{
-				$(self.playButtonIDP).css("background-position", "-0px -128px");
-			}
-			else
-			{
-				$(self.playButtonID).css("background-position", "-0px -128px");
-			}
-			*/
-			var self = self;
-			//self.slideShowID = window.setInterval(self.swipeLeft, self.timeBetweenMessages);
-			
-			// hide navigation
-			$(self.rightArrowID).css("visibility", "hidden");
-			$(self.leftArrowID).css("visibility", "hidden");
+			self.autoStartPlay = true;
+			self.setupPlayButton();
+			self.slideMessageLeft();
+			self.startTransitionTimer();
 		}	  
 	};		// playButtonClick
   
@@ -451,7 +439,10 @@ Copyright (c) 2015. FIS.
 	UnlimitedMessages.prototype.mouseEnterPlaceholder = function(e)
 	{
 		var self = e.data[0];
-		window.clearInterval(self.slideShowID);
+		if(self.autoStartPlay)
+		{
+			self.clearTransitionTimer();
+		}
 		
 		// show buttons
 		//$(self.leftArrowID).show();
@@ -474,7 +465,7 @@ Copyright (c) 2015. FIS.
 		$(self.rightArrowID).hide();
 		$(self.playButtonID).hide();
 		
-		self.slideShowID = window.setInterval(self.slideTransitionTimer, self.timeBetweenMessages, self);
+		self.startTransitionTimer();
 	};
 	
 	
@@ -583,7 +574,7 @@ Copyright (c) 2015. FIS.
 
 	UnlimitedMessages.prototype.slideMessageLeft = function()
 	{
-		// check if the next slide is going to be the last slide
+		// check if the current slide is the last slide
 		// show the first slide
 		if(this.currMessageIndex == this.messageObjCollection.length - 1)
 		{
@@ -595,9 +586,7 @@ Copyright (c) 2015. FIS.
 				// shift each slide right one step
 				var currentSlide = this.messageObjCollection[i];
 				l = this.slideWidths[i] * i;
-				currentSlide.style.left = l + "px";
-				//$(currentSlide).animate( {left:"+=" + l});
-				//l = currentSlide.style.left;
+				$(currentSlide).animate({left:l});
 			}
 			
 			// update the dimensions of the placeholder to the current slide
@@ -623,31 +612,29 @@ Copyright (c) 2015. FIS.
 	
 	UnlimitedMessages.prototype.slideMessageRight = function()
 	{
-		// if its the first slide, don't let go past it
-		// animate it and reposition it back.
+
+		// show the last slide if its a first slide
 		if(this.currMessageIndex == 0)
 		{
-			 $(this.messageObjCollection[this.currMessageIndex])
-			.animate(
-				{ 
-					left:'+=200' 
-				}, 
-				{
-					duration: 'slow',
-					easing: 'easeOutBack'
-				})
-			.animate(
-				{ 
-					left: 0 
-				}, 
-				{
-					duration: 'slow',
-					easing: 'easeOutBack'
-				});
-
+			
+			this.currMessageIndex = this.messageObjCollection.length - 1;
+			var l;
+			for(var i = 0, counter = this.messageObjCollection.length - 1;i < this.messageObjCollection.length;i++, counter--)
+			{
+				// shift each slide left one step
+				var currentSlide = this.messageObjCollection[i];
+				l = this.slideWidths[i] * counter * -1;
+				$(currentSlide).animate({left: l});		// go to left, negative
+			}
+			
+			this.updatePlaceHolderDimensions();
+			this.updateButtonPosition();
+				
 			return;
+			
 		}
 		
+			
 		--(this.currMessageIndex);
 		for(var i = 0;i < this.messageObjCollection.length;i++)
 		{
@@ -709,18 +696,35 @@ Copyright (c) 2015. FIS.
 		$(self.rightArrowID).css({"background-position":"-64px -64px"});
 	};
 	
-/*
+
 	UnlimitedMessages.prototype.mouseEnterPlayButton = function(e)
 	{
 		var self = e.data[0];
+		$(self.playButtonID).css("cursor", "pointer");
 	};
+	
 	
 	UnlimitedMessages.prototype.mouseLeavePlayButton = function(e)
 	{
 		var self = e.data[0];
-		//$(self.leftArrowID).css({"background-position":"0 -128px"});
+		$(self.playButtonID).css("cursor", "auto");
 	};
-*/	
 	
-		
+	
+	UnlimitedMessages.prototype.startTransitionTimer = function()
+	{
+		if(this.autoStartPlay && !this.isAlreadyPlaying)
+		{
+			this.isAlreadyPlaying = true;
+			this.slideShowID = window.setInterval(this.slideTransitionTimer, this.timeBetweenMessages, this);
+		}
+	};
+	
+	
+	UnlimitedMessages.prototype.clearTransitionTimer = function()
+	{
+		this.isAlreadyPlaying = false;
+		window.clearInterval(this.slideShowID);
+	};
+	
 })();		// End Unlimited Messages
