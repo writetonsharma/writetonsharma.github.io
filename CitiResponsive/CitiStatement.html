@@ -23,9 +23,11 @@ jQuery(document).on("mobileinit", function() {
 <script src="./js/ExpandCollapse.js" type="text/javascript"></script>-->
 <script src="./js/highcharts.js" type="text/javascript"></script>
 <script src="./js/CsfChart.js" type="text/javascript"></script>
+<link href=".\js\ExpandCollapse.css" rel="stylesheet"/>
+<script src=".\js\ExpandCollapse.js" type="text/javascript"></script>
 </head>
 <body>
-<div class="Page11411 div2" name="End Inserts" >
+<div class="Page11411 div2 expandcollapse" name="Page1" >
 	<div class="normal div1" ></div>
 	<header>
 	<div class="normal div3" ><img class="img0" src="./Images/CITILOGO_C072_15.jpg"  alt=""/>
@@ -643,7 +645,7 @@ jQuery(document).on("mobileinit", function() {
 
 <div class="div0"></div>
 
-<div class="Page11411 div2" name="Page 2" >
+<div class="Page11411 div2 expandcollapse" name="Page 2" >
 <div class="normal div1" ></div>
 	<header>
 	<div class="normal div3" ><img class="img0" src="./Images/CITILOGO_C072_15.jpg"  alt=""/>
@@ -1391,6 +1393,7 @@ function createPie1()
 	createPieChart(".pie1", Chart, chartTitle, XAxis, YAxis, plotOpt, Navigation, chartSeries);
 };
 createPie1();
+var ec = new ExpandCollapse(".expandcollapse");
 </script>
 
 </body>
