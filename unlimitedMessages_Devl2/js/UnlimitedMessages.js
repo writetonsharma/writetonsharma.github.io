@@ -203,11 +203,12 @@ Copyright (c) 2015. FIS.
 		else
 		{
 			$(this.playButtonID).css({
-					"position":"relative",
+					"position":"absolute",
 					"width":this.iconWidth,
 					"height":this.iconHeight,
 					"display":"inline-block",
-					"bottom":this.iconHeight,
+					"bottom":0,
+					"left":0,
 					"margin-left":"auto",
 					"margin-right":"auto",
 					"background-image": path,
