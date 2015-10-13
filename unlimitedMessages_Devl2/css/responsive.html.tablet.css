@@ -1,0 +1,136 @@
+﻿@charset "utf-8";
+
+/*
+	Designer version 15.0.0 build 18 generated CSS file
+	Generation Date: 10/13/2015
+	Document Name: responsive.html
+
+	## WARNING: DO NOT EDIT THE FILE!! ##
+*/
+
+body {
+	background-color:#888;
+}div.div3 {
+	z-index:0;		
+	overflow:auto;
+	position:relative;
+	width:56.28%;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:0px;
+	margin-bottom:0px;
+	background-color:#ffffff;
+	-moz-border-radius:13.00px;
+	-webkit-border-radius:13.00px;
+	border-radius:13.00px;
+	-moz-box-shadow:5px 0px 5px 2px #555;
+	-webkit-box-shadow:5px 0px 5px 2px #555;
+	box-shadow:5px 0px 5px 2px #555;
+}
+div.div4 {
+	text-align:left;
+	line-height:1.00;
+	display: block;
+}
+.f1 {
+	font-family:Arial;
+	font-size:0.8333em;
+	font-style:normal;
+	font-weight:normal;
+	line-height:100%;
+}
+span.span2 {
+	line-height:1.00;
+	display: inline;
+}
+br.br2 {
+	clear:left;
+}
+span.span4 {
+	visibility:hidden;white-space:pre;
+}
+table.table1 {
+	border-collapse:collapse;
+	border-spacing:0.00px;
+	width:100.00%;
+	background-color:#FFFFFF;
+	border-top:2.00px solid #99CC00;
+	border-bottom:2.00px solid #99CC00;
+	border-left:2.00px solid #99CC00;
+	border-right:2.00px solid #99CC00;
+	float:left;
+	display: table;
+}
+td.td1 {
+	
+	width:15.93%;
+	vertical-align:top;
+	background-color:#FFFFFF;
+}
+td.td2 {
+	
+	width:82.60%;
+	vertical-align:top;
+	background-color:#FFFFFF;
+	border-left:2.00px solid #99CC00;
+}
+.f2 {
+	font-family:Arial;
+	font-size:0.8333em;
+	font-style:normal;
+	font-weight:bold;
+	line-height:100%;
+}
+.c1 {
+	color:#99CC00;
+}
+td.td3 {
+	
+	width:99.27%;
+	vertical-align:top;
+	background-color:#FFFFFF;
+	border-top:2.00px solid #99CC00;
+}
+td.td4 {
+	
+	width:24.27%;
+	vertical-align:top;
+	background-color:#FFFFFF;
+}
+td.td5 {
+	
+	width:49.27%;
+	vertical-align:top;
+	background-color:#FFFFFF;
+	border-left:2.00px solid #99CC00;
+}
+td.td6 {
+	
+	width:24.27%;
+	vertical-align:top;
+	background-color:#FFFFFF;
+	border-left:2.00px solid #99CC00;
+}
+td.td7 {
+	
+	width:24.27%;
+	vertical-align:top;
+	background-color:#FFFFFF;
+	border-top:2.00px solid #99CC00;
+}
+td.td8 {
+	
+	width:49.27%;
+	vertical-align:top;
+	background-color:#FFFFFF;
+	border-top:2.00px solid #99CC00;
+	border-left:2.00px solid #99CC00;
+}
+td.td9 {
+	
+	width:24.27%;
+	vertical-align:top;
+	background-color:#FFFFFF;
+	border-top:2.00px solid #99CC00;
+	border-left:2.00px solid #99CC00;
+}
