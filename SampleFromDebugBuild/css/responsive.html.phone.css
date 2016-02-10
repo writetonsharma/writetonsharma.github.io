@@ -1,0 +1,88 @@
+﻿@charset "utf-8";
+
+/*
+	Designer version 15.0.0 build 109 generated CSS file
+	Generation Date: 02/10/2016
+	Document Name: responsive.html
+
+	## WARNING: DO NOT EDIT THE FILE!! ##
+*/
+
+body {
+	background-color:#fff;
+}div.div3 {
+	z-index:0;		
+	overflow:auto;
+	position:relative;
+	width:90.58%;
+}
+table.table1 {
+	border-collapse:collapse;
+	border-spacing:0.00px;
+	width:100.00%;
+	background-color:#FFFFFF;
+	border-top:1.00px solid #000000;
+	border-bottom:1.00px solid #000000;
+	border-left:1.00px solid #000000;
+	border-right:1.00px solid #000000;
+	float:left;
+	display: table;
+}
+td.td1 {
+	
+	width:99.89%;
+	vertical-align:top;
+	background-color:#FFFFFF;
+}
+table.table2 {
+	border-collapse:collapse;
+	border-spacing:0.00px;
+	width:100.00%;
+	background-color:#FFFFFF;
+	border-top:0.00px solid #000000;
+	border-bottom:0.00px solid #000000;
+	border-left:0.00px solid #000000;
+	border-right:0.00px solid #000000;
+	float:left;
+	display: table;
+}
+td.td2 {
+	
+	width:50.00%;
+	vertical-align:top;
+	background-color:#FFFFFF;
+}
+div.div4 {
+	text-align:left;
+	line-height:1.00;
+	display: block;
+}
+.f1 {
+	font-family:Arial;
+	font-size:0.8333em;
+	font-style:normal;
+	font-weight:normal;
+	line-height:100%;
+}
+span.showStyle {
+	line-height:1.00;
+	display: inline;
+}
+span.hideStyle {
+	line-height:1.00;
+	display: inline;
+}
+div.div5 {
+	line-height:4px;
+}
+td.td3 {
+	
+	width:99.89%;
+	vertical-align:top;
+	background-color:#FFFFFF;
+	border-top:1.00px solid #000000;
+}
+span.span2 {
+	line-height:1.00;
+	display: inline;
+}
