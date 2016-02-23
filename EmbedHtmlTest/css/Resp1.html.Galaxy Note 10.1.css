@@ -1,0 +1,282 @@
+﻿@charset "utf-8";
+
+/*
+	Designer version 15.0.0 build 118 generated CSS file
+	Generation Date: 02/18/2016
+	Document Name: Resp1.html
+
+	## WARNING: DO NOT EDIT THE FILE!! ##
+*/
+
+body {
+	background-color:#fff;
+}div.div3 {
+	z-index:0;		
+	overflow:auto;
+	position:relative;
+	width:80.50%;
+}
+div.Normal_Paragraph_div4 {
+	text-align:left;
+	padding-left:1.67%;
+	line-height:1.00;
+	display: block;
+}
+img.Normal_Image_img1 {
+	z-index:1;		
+	width:14.4333%;
+	border-top:0.00px solid #000000;
+	border-bottom:0.00px solid #000000;
+	border-left:0.00px solid #000000;
+	border-right:0.00px solid #000000;
+	float:none;
+	display: inline;
+}
+.f1 {
+	font-family:Arial;
+	font-size:0.8333em;
+	font-style:normal;
+	font-weight:normal;
+	line-height:100%;
+}
+.f2 {
+	font-family:Segoe UI Semibold;
+	font-size:1.1667em;
+	font-style:normal;
+	font-weight:normal;
+	line-height:100%;
+}
+.c1 {
+	color:#72246C;
+}
+span.Purple_Text {
+	line-height:1.00;
+	display: inline;
+}
+.f3 {
+	font-family:Segoe UI;
+	font-size:0.8333em;
+	font-style:normal;
+	font-weight:normal;
+	line-height:100%;
+}
+.c2 {
+	color:#020202;
+}
+span.Normal_Text {
+	line-height:1.00;
+	display: inline;
+}
+div.div5 {
+	text-align:left;
+	line-height:1.00;
+	display: block;
+}
+div.Normal_Table_div6 {
+	background-color:#FFFFFF;
+	display: none;
+	border-top:4.00px solid #0000FF;
+	border-bottom:4.00px solid #0000FF;
+	border-left:4.00px solid #0000FF;
+	border-right:4.00px solid #0000FF;
+	padding-left:1.67%;
+	width:94.93%;
+}
+div.Table_Header__Shaded__div7 {
+	width:96.44%;
+	background-color:#E7A614;
+	border-top:1.00px solid #FFFFFF;
+	border-bottom:1.00px solid #FFFFFF;
+	border-left:1.00px solid #FFFFFF;
+	border-right:1.00px solid #FFFFFF;
+	padding-top:1.00px;
+	padding-left:5.00px;
+	padding-right:5.00px;
+	padding-bottom:1.00px;
+	display: block;
+	border-spacing:0px;
+	border-collapse:collapse;
+}
+div.Table_Header__Shaded__div8 {
+	text-align:center;
+	line-height:2.00;
+}
+.f4 {
+	font-family:Segoe UI Semibold;
+	font-size:1.0000em;
+	font-style:normal;
+	font-weight:normal;
+	line-height:100%;
+}
+.c3 {
+	color:#464645;
+}
+span.Table_Headings {
+	line-height:2.00;
+	display: inline;
+}
+table.table1 {
+	border-collapse:collapse;
+	border-spacing:0.00px;
+	width:84.44%;
+	background-color:#FFFFFF;
+	border-top:4.00px solid #FF0000;
+	border-bottom:4.00px solid #FF0000;
+	border-left:4.00px solid #FF0000;
+	border-right:4.00px solid #FF0000;
+	margin-left:2.22%;
+	float:left;
+	display: table;
+}
+td.td1 {
+	
+	width:47.79%;
+	vertical-align:top;
+	background-color:#FFFFFF;
+}
+.f5 {
+	font-family:Segoe UI;
+	font-size:0.8333em;
+	font-style:normal;
+	font-weight:normal;
+	line-height:100%;
+}
+td.td2 {
+	
+	width:47.79%;
+	vertical-align:top;
+	background-color:#FFFFFF;
+	border-left:4.00px solid #FF0000;
+}
+div.div9 {
+	text-align:right;
+	padding-right:10.53%;
+	line-height:1.00;
+	display: block;
+}
+span.span2 {
+	line-height:1.00;
+	display: inline;
+}
+td.td3 {
+	
+	width:47.79%;
+	vertical-align:top;
+	background-color:#FFFFFF;
+	border-top:4.00px solid #FF0000;
+}
+td.td4 {
+	
+	width:47.79%;
+	vertical-align:top;
+	background-color:#FFFFFF;
+	border-top:4.00px solid #FF0000;
+	border-left:4.00px solid #FF0000;
+}
+.f6 {
+	font-family:Segoe UI Semibold;
+	font-size:1.0000em;
+	font-style:normal;
+	font-weight:normal;
+	line-height:100%;
+}
+span.Bold_Text {
+	line-height:1.00;
+	display: inline;
+}
+table.Normal_Table_table2 {
+	border-collapse:collapse;
+	border-spacing:0.00px;
+	width:75.00%;
+	background-color:#FFFFFF;
+	border-top:4.00px solid #0000FF;
+	border-bottom:4.00px solid #0000FF;
+	border-left:4.00px solid #0000FF;
+	border-right:4.00px solid #0000FF;
+	float:left;
+	display: table;
+}
+td.td5 {
+	
+	width:98.13%;
+	vertical-align:top;
+	background-color:#FFFFFF;
+}
+div.Normal_Table_div10 {
+	background-color:#FFFFFF;
+	margin-top:6.95%;
+	display: none;
+	border-top:0.00px solid #000000;
+	border-bottom:0.00px solid #000000;
+	border-left:0.00px solid #000000;
+	border-right:0.00px solid #000000;
+	padding-left:1.67%;
+	width:96.33%;
+}
+div.Normal_Paragraph_div11 {
+	text-align:left;
+	padding-left:2.56%;
+	line-height:1.00;
+	display: block;
+}
+.f7 {
+	font-family:Segoe UI Semibold;
+	font-size:1.0000em;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:underline;
+	line-height:100%;
+}
+.c4 {
+	color:#FF0000;
+}
+a.a1 {
+	color:#666699;
+}
+div.div12 {
+	text-align:left;
+	padding-left:2.56%;
+	line-height:1.00;
+	display: block;
+}
+.c5 {
+	color:#202020;
+}
+div.div13 {
+	text-align:justify;
+	padding-top:2.13%;
+	padding-left:2.56%;
+	line-height:1.00;
+	display: block;
+}
+img.img2 {
+	z-index:1;		
+	width:45.3846%;
+	float:none;
+	display: inline;
+}
+table.Normal_Table_table3 {
+	border-collapse:collapse;
+	border-spacing:0.00px;
+	width:65.00%;
+	background-color:#FFFFFF;
+	border-top:0.00px solid #000000;
+	border-bottom:0.00px solid #000000;
+	border-left:0.00px solid #000000;
+	border-right:0.00px solid #000000;
+	margin-top:40.00px;
+	float:left;
+	display: table;
+}
+td.Normal_Table_Cell_td6 {
+	
+	width:0.00%;
+	vertical-align:top;
+	background-color:#FFFFFF;
+}
+div.Show_on_Dell_only_div14 {
+	text-align:left;
+	padding-left:1.67%;
+	line-height:1.00;
+	display: none;
+}
