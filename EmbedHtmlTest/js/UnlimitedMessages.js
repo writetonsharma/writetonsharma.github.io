@@ -10,6 +10,12 @@ Copyright (c) 2015. FIS.
 
 	UnlimitedMessages = function(element, subElements, opts)
 	{
+		if($(element).is(":hidden"))
+		{
+				// do not work on hidden elements
+				return;
+		}
+		
 		// initialization
 		this.setDefaults();
 		this.setOpts(this, element, subElements, opts);
@@ -82,6 +88,7 @@ Copyright (c) 2015. FIS.
 		this.currPlayingVideoObj = undefined;		// Any video object currently playing if any.
 		this.showMessageControl = false;
 		this.navImagePath = null;
+		
 	};
 
 	
@@ -326,7 +333,7 @@ Copyright (c) 2015. FIS.
 		
 		for (var i = 0; i < slideCount; i++) 
 		{
-			this.slideWidths[i] = this.messageObjCollection[i].offsetWidth;
+			this.slideWidths[i] = $(this.messageObjCollection[i]).parent().offsetWidth;
 			if (this.slideWidths[i] > maxWidth) 
 			{
 				maxWidth = this.slideWidths[i]; // The height of the tallest slide so far.		
@@ -660,6 +667,7 @@ Copyright (c) 2015. FIS.
 
 	UnlimitedMessages.prototype.slideMessageLeft = function()
 	{
+		
 		// check if the current slide is the last slide
 		// show the first slide
 		if(this.currMessageIndex == this.messageObjCollection.length - 1)
@@ -722,7 +730,7 @@ Copyright (c) 2015. FIS.
 	
 	UnlimitedMessages.prototype.slideMessageRight = function()
 	{
-
+		
 		// show the last slide if its a first slide
 		if(this.currMessageIndex == 0)
 		{
