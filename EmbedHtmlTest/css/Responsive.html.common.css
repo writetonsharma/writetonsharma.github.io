@@ -1,25 +1,18 @@
 ﻿@charset "utf-8";
 
 /*
-	Designer version 15.0.0 build 120 generated CSS file
-	Generation Date: 02/23/2016
-	Document Name: non-paginated.html
+	Designer version 15.0.0 build 132 generated CSS file
+	Generation Date: 03/10/2016
+	Document Name: Responsive.html
 
 	## WARNING: DO NOT EDIT THE FILE!! ##
 */
 
-div.mainPage36563 {
-	padding-left:48.00px;
-	padding-right:48.00px;
+div.mainPage10130 {
+	padding-left:12.25%;
+	padding-right:12.25%;
 	padding-top:96.00px;
 	padding-bottom:96.00px;
-}
-.mainf10004 {
-	font-family:Arial;
-	font-size:10.00pt;
-	font-style:normal;
-	font-weight:normal;
-	line-height:100%;
 }
 @media print {
 	.noprint {display:none;}
@@ -59,6 +52,12 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	vertical-align:middle;
 }
 
+img, video {width: 100%;}
+.clearr {clear: right;}
+.clearl {clear: left;}
+.clearn {clear: none;}
+.visibleh {visibility: hidden;}
+.displayn {display: none;}
 /* normal styles */
 p.normal, table.normal, div.normal {
 	text-align:left;
@@ -80,7 +79,7 @@ hr.hr1 {
 	background-color:#666666;
 }
 /* page break */
-div.maindiv1 {
+div.div1 {
 	height:5px;
 	position:relative;
 	page-break-before:always;
@@ -92,34 +91,12 @@ div.maindiv1 {
 	background-color:#888;
 }
 
-span.mainspan1 {
+span.span1 {
 	visibility:hidden;white-space:pre;
 }
-div.maindiv2 {
+div.div2 {
 	line-height:4px;
 }
-div.maindiv3 {
-	z-index:0;		
-	overflow:auto;
-	position:relative;
-	width:720.00px;
-	margin-left:auto;
-	margin-right:auto;
-	margin-top:0px;
-	margin-bottom:0px;
-	background-color:#ffffff;
-	-moz-border-radius:13.00px;
-	-webkit-border-radius:13.00px;
-	border-radius:13.00px;
-	-moz-box-shadow:5px 0px 5px 2px #555;
-	-webkit-box-shadow:5px 0px 5px 2px #555;
-	box-shadow:5px 0px 5px 2px #555;
-}
-div.maindiv4 {
-	text-align:left;
-	line-height:1.00;
-}
-span.mainspan2 {
-	line-height:1.00;
-	color:#339966;
+br.br1 {
+	clear:left;
 }
