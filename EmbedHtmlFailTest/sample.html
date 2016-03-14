@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<title>smalldoc</title>
+<title>sample</title>
 <link href="css.css" rel="stylesheet"/>
 </head>
 <body>
@@ -13,6 +13,7 @@
 <div class="msg"><div class=""><div class=""><span class="" >You will have access to a wide range of investments and the convenience of one provider conducting all your investment activities. Please stop by a branch, or visit&nbsp;</span></div>
 </div>
 </div>
+<div class="hid">hidden div</div>
 </td>
 </tr>
 </tbody>
@@ -23,7 +24,7 @@ sampleHtmlFn = function()
 {
 	var w = $(".msg").outerWidth(true);
 	console.log(w);
-	if($(".msg").is(":hidden"))
+	if($(".hid").is(":hidden"))
 	{
 		console.log("hidden");
 	}

@@ -3,6 +3,9 @@
 	overflow:auto;
 	position:relative;
 	width:80.50%;
+}
+div.hid {
 	display:none;
 }
+
 

@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>main</title>
+<script src="jquery-min.js" type="text/javascript"></script>
+</head>
+<body>
+<div ><span >This is a web portal. Embeding a sample html below.</span></div>
+<div id="divid"></div>
+<script type="text/javascript">
+$(window).load(function(){
+	$("#divid").load("sample.html", function() {
+		sampleHtmlFn();
+	});
+});
+</script>
+</body>
+</html>
