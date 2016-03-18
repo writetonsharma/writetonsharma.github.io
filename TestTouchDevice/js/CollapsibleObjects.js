@@ -105,6 +105,11 @@ Copyright (c) 2015-16. FIS.
 		// Click or hover event ?
 		this.htmlActivationEvent = "click";
 		
+		// touch device ?
+		this.bTouchDevice = false;
+		if (("ontouchstart" in document.documentElement)) {
+			this.bTouchDevice = true;
+		}		
 	};
 	
 	CollapsibleObjects.prototype.setOpts = function(obj, options)
@@ -146,8 +151,18 @@ Copyright (c) 2015-16. FIS.
 		}
 		else
 		{
-			$(self.htmlSourceStyle).on("mouseenter", [this], self.CObjectButtonClicked);
-			$(self.htmlSourceStyle).on("mouseout", [this], self.CObjectButtonClicked);
+			if(bTouchDevice)
+			{
+				//touchstart and touchend for touch devices
+				$(self.htmlSourceStyle).on("touchstart", [this], self.CObjectButtonClicked);
+				$(self.htmlSourceStyle).on("touchend", [this], self.CObjectButtonClicked);
+			}
+			else
+			{
+				// Actual hover event for non touch devices
+				$(self.htmlSourceStyle).on("mouseenter", [this], self.CObjectButtonClicked);
+				$(self.htmlSourceStyle).on("mouseout", [this], self.CObjectButtonClicked);
+			}
 		}
 	};
 	
