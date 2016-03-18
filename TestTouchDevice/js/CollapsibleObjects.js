@@ -151,7 +151,7 @@ Copyright (c) 2015-16. FIS.
 		}
 		else
 		{
-			if(bTouchDevice)
+			if(self.bTouchDevice)
 			{
 				//touchstart and touchend for touch devices
 				$(self.htmlSourceStyle).on("touchstart", [this], self.CObjectButtonClicked);
