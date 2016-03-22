@@ -267,238 +267,239 @@
 </div>
 
 <script type="text/javascript">
-
-CreateUMessage1 = function()
-{
-	var opts;
-	
-	if(document.documentElement.clientWidth >= 0 &&
-			document.documentElement.clientWidth < 320)
+setTimeout(function() {
+	CreateUMessage1 = function()
 	{
-		opts = {
-				timeBetweenMessages:5000,
-				showPlayButton:true,
-				overflowOpt:'visible',
-				allowSwipe:true,
-				showArrows:true,
-				loopMessages:true,
-				autoStartPlay:true,
-				occur:100,
-				placeHolderWidth:0,
-				placeHolderHeight:0,
-				playButtonID:'#nav-play1',
-				leftArrowID:'#nav-left1',
-				rightArrowID:'#nav-right1',
-				showMessageControl:false,
-				navImagePath:'.//./HTML%20Images/navs1.png'
+		var opts;
+		
+		if(document.documentElement.clientWidth >= 0 &&
+				document.documentElement.clientWidth < 320)
+		{
+			opts = {
+					timeBetweenMessages:5000,
+					showPlayButton:true,
+					overflowOpt:'visible',
+					allowSwipe:true,
+					showArrows:true,
+					loopMessages:true,
+					autoStartPlay:true,
+					occur:100,
+					placeHolderWidth:0,
+					placeHolderHeight:0,
+					playButtonID:'#nav-play1',
+					leftArrowID:'#nav-left1',
+					rightArrowID:'#nav-right1',
+					showMessageControl:false,
+					navImagePath:'.//./HTML%20Images/navs1.png'
+			};
+		}
+		
+		else if(document.documentElement.clientWidth >= 320 &&
+				document.documentElement.clientWidth < 375)
+		{
+			opts = {
+					timeBetweenMessages:10000,
+					showPlayButton:true,
+					overflowOpt:'visible',
+					allowSwipe:true,
+					showArrows:true,
+					loopMessages:true,
+					autoStartPlay:false,
+					occur:10,
+					placeHolderWidth:0,
+					placeHolderHeight:0,
+					playButtonID:'#nav-play1',
+					leftArrowID:'#nav-left1',
+					rightArrowID:'#nav-right1',
+					showMessageControl:true,
+					navImagePath:'.//./HTML%20Images/navs1.png'
+			};
+		}
+		else if(document.documentElement.clientWidth >= 375 &&
+				document.documentElement.clientWidth < 1280)
+		{
+			opts = {
+					timeBetweenMessages:5000,
+					showPlayButton:true,
+					overflowOpt:'visible',
+					allowSwipe:true,
+					showArrows:true,
+					loopMessages:true,
+					autoStartPlay:true,
+					occur:100,
+					placeHolderWidth:0,
+					placeHolderHeight:0,
+					playButtonID:'#nav-play1',
+					leftArrowID:'#nav-left1',
+					rightArrowID:'#nav-right1',
+					showMessageControl:true,
+					navImagePath:'.//./HTML%20Images/navs1.png'
+			};
+		}
+		else if(document.documentElement.clientWidth >= 1280 &&
+				document.documentElement.clientWidth < 1920)
+		{
+			opts = {
+					timeBetweenMessages:5000,
+					showPlayButton:true,
+					overflowOpt:'visible',
+					allowSwipe:true,
+					showArrows:true,
+					loopMessages:true,
+					autoStartPlay:true,
+					occur:100,
+					placeHolderWidth:0,
+					placeHolderHeight:0,
+					playButtonID:'#nav-play1',
+					leftArrowID:'#nav-left1',
+					rightArrowID:'#nav-right1',
+					showMessageControl:true,
+					navImagePath:'.//./HTML%20Images/navs1.png'
+			};
+		}
+		
+		else if(document.documentElement.clientWidth >= 1920)
+		{
+			opts = {
+					timeBetweenMessages:5000,
+					showPlayButton:true,
+					overflowOpt:'hidden',
+					allowSwipe:true,
+					showArrows:true,
+					loopMessages:true,
+					autoStartPlay:false,
+					occur:100,
+					placeHolderWidth:0,
+					placeHolderHeight:0,
+					playButtonID:'#nav-play1',
+					leftArrowID:'#nav-left1',
+					rightArrowID:'#nav-right1',
+					showMessageControl:true,
+					navImagePath:'.//./HTML%20Images/navs1.png'
+			};
 		};
-	}
-	
-	else if(document.documentElement.clientWidth >= 320 &&
-			document.documentElement.clientWidth < 375)
-	{
-		opts = {
-				timeBetweenMessages:10000,
-				showPlayButton:true,
-				overflowOpt:'visible',
-				allowSwipe:true,
-				showArrows:true,
-				loopMessages:true,
-				autoStartPlay:false,
-				occur:10,
-				placeHolderWidth:0,
-				placeHolderHeight:0,
-				playButtonID:'#nav-play1',
-				leftArrowID:'#nav-left1',
-				rightArrowID:'#nav-right1',
-				showMessageControl:true,
-				navImagePath:'.//./HTML%20Images/navs1.png'
-		};
-	}
-	else if(document.documentElement.clientWidth >= 375 &&
-			document.documentElement.clientWidth < 1280)
-	{
-		opts = {
-				timeBetweenMessages:5000,
-				showPlayButton:true,
-				overflowOpt:'visible',
-				allowSwipe:true,
-				showArrows:true,
-				loopMessages:true,
-				autoStartPlay:true,
-				occur:100,
-				placeHolderWidth:0,
-				placeHolderHeight:0,
-				playButtonID:'#nav-play1',
-				leftArrowID:'#nav-left1',
-				rightArrowID:'#nav-right1',
-				showMessageControl:true,
-				navImagePath:'.//./HTML%20Images/navs1.png'
-		};
-	}
-	else if(document.documentElement.clientWidth >= 1280 &&
-			document.documentElement.clientWidth < 1920)
-	{
-		opts = {
-				timeBetweenMessages:5000,
-				showPlayButton:true,
-				overflowOpt:'visible',
-				allowSwipe:true,
-				showArrows:true,
-				loopMessages:true,
-				autoStartPlay:true,
-				occur:100,
-				placeHolderWidth:0,
-				placeHolderHeight:0,
-				playButtonID:'#nav-play1',
-				leftArrowID:'#nav-left1',
-				rightArrowID:'#nav-right1',
-				showMessageControl:true,
-				navImagePath:'.//./HTML%20Images/navs1.png'
-		};
-	}
-	
-	else if(document.documentElement.clientWidth >= 1920)
-	{
-		opts = {
-				timeBetweenMessages:5000,
-				showPlayButton:true,
-				overflowOpt:'hidden',
-				allowSwipe:true,
-				showArrows:true,
-				loopMessages:true,
-				autoStartPlay:false,
-				occur:100,
-				placeHolderWidth:0,
-				placeHolderHeight:0,
-				playButtonID:'#nav-play1',
-				leftArrowID:'#nav-left1',
-				rightArrowID:'#nav-right1',
-				showMessageControl:true,
-				navImagePath:'.//./HTML%20Images/navs1.png'
-		};
+		
+		var um = new UnlimitedMessages('.UnlimitedMessage1', '.UnlimitedMessage1_umslide', opts);
+		
 	};
-	
-	var um = new UnlimitedMessages('.UnlimitedMessage1', '.UnlimitedMessage1_umslide', opts);
-	
-};
-CreateUMessage1();
+	CreateUMessage1();
 
-CreateUMessage2 = function()
-{
-	var opts;
-	
-	if(document.documentElement.clientWidth >= 0 &&
-			document.documentElement.clientWidth < 320)
+	CreateUMessage2 = function()
 	{
-		opts = {
-				timeBetweenMessages:5000,
-				showPlayButton:true,
-				overflowOpt:'visible',
-				allowSwipe:true,
-				showArrows:true,
-				loopMessages:true,
-				autoStartPlay:true,
-				occur:100,
-				placeHolderWidth:0,
-				placeHolderHeight:0,
-				playButtonID:'#nav-play2',
-				leftArrowID:'#nav-left2',
-				rightArrowID:'#nav-right2',
-				showMessageControl:false,
-				navImagePath:'.//./HTML%20Images/navs1.png'
+		var opts;
+		
+		if(document.documentElement.clientWidth >= 0 &&
+				document.documentElement.clientWidth < 320)
+		{
+			opts = {
+					timeBetweenMessages:5000,
+					showPlayButton:true,
+					overflowOpt:'visible',
+					allowSwipe:true,
+					showArrows:true,
+					loopMessages:true,
+					autoStartPlay:true,
+					occur:100,
+					placeHolderWidth:0,
+					placeHolderHeight:0,
+					playButtonID:'#nav-play2',
+					leftArrowID:'#nav-left2',
+					rightArrowID:'#nav-right2',
+					showMessageControl:false,
+					navImagePath:'.//./HTML%20Images/navs1.png'
+			};
+		}
+		
+		else if(document.documentElement.clientWidth >= 320 &&
+				document.documentElement.clientWidth < 375)
+		{
+			opts = {
+					timeBetweenMessages:10000,
+					showPlayButton:true,
+					overflowOpt:'visible',
+					allowSwipe:true,
+					showArrows:true,
+					loopMessages:true,
+					autoStartPlay:false,
+					occur:10,
+					placeHolderWidth:0,
+					placeHolderHeight:0,
+					playButtonID:'#nav-play2',
+					leftArrowID:'#nav-left2',
+					rightArrowID:'#nav-right2',
+					showMessageControl:true,
+					navImagePath:'.//./HTML%20Images/navs1.png'
+			};
+		}
+		else if(document.documentElement.clientWidth >= 375 &&
+				document.documentElement.clientWidth < 1280)
+		{
+			opts = {
+					timeBetweenMessages:5000,
+					showPlayButton:true,
+					overflowOpt:'visible',
+					allowSwipe:true,
+					showArrows:true,
+					loopMessages:true,
+					autoStartPlay:true,
+					occur:100,
+					placeHolderWidth:0,
+					placeHolderHeight:0,
+					playButtonID:'#nav-play2',
+					leftArrowID:'#nav-left2',
+					rightArrowID:'#nav-right2',
+					showMessageControl:true,
+					navImagePath:'.//./HTML%20Images/navs1.png'
+			};
+		}
+		else if(document.documentElement.clientWidth >= 1280 &&
+				document.documentElement.clientWidth < 1920)
+		{
+			opts = {
+					timeBetweenMessages:5000,
+					showPlayButton:true,
+					overflowOpt:'visible',
+					allowSwipe:true,
+					showArrows:true,
+					loopMessages:true,
+					autoStartPlay:true,
+					occur:100,
+					placeHolderWidth:0,
+					placeHolderHeight:0,
+					playButtonID:'#nav-play2',
+					leftArrowID:'#nav-left2',
+					rightArrowID:'#nav-right2',
+					showMessageControl:true,
+					navImagePath:'.//./HTML%20Images/navs1.png'
+			};
+		}
+		
+		else if(document.documentElement.clientWidth >= 1920)
+		{
+			opts = {
+					timeBetweenMessages:5000,
+					showPlayButton:true,
+					overflowOpt:'hidden',
+					allowSwipe:true,
+					showArrows:true,
+					loopMessages:true,
+					autoStartPlay:false,
+					occur:100,
+					placeHolderWidth:0,
+					placeHolderHeight:0,
+					playButtonID:'#nav-play2',
+					leftArrowID:'#nav-left2',
+					rightArrowID:'#nav-right2',
+					showMessageControl:true,
+					navImagePath:'.//./HTML%20Images/navs1.png'
+			};
 		};
-	}
-	
-	else if(document.documentElement.clientWidth >= 320 &&
-			document.documentElement.clientWidth < 375)
-	{
-		opts = {
-				timeBetweenMessages:10000,
-				showPlayButton:true,
-				overflowOpt:'visible',
-				allowSwipe:true,
-				showArrows:true,
-				loopMessages:true,
-				autoStartPlay:false,
-				occur:10,
-				placeHolderWidth:0,
-				placeHolderHeight:0,
-				playButtonID:'#nav-play2',
-				leftArrowID:'#nav-left2',
-				rightArrowID:'#nav-right2',
-				showMessageControl:true,
-				navImagePath:'.//./HTML%20Images/navs1.png'
-		};
-	}
-	else if(document.documentElement.clientWidth >= 375 &&
-			document.documentElement.clientWidth < 1280)
-	{
-		opts = {
-				timeBetweenMessages:5000,
-				showPlayButton:true,
-				overflowOpt:'visible',
-				allowSwipe:true,
-				showArrows:true,
-				loopMessages:true,
-				autoStartPlay:true,
-				occur:100,
-				placeHolderWidth:0,
-				placeHolderHeight:0,
-				playButtonID:'#nav-play2',
-				leftArrowID:'#nav-left2',
-				rightArrowID:'#nav-right2',
-				showMessageControl:true,
-				navImagePath:'.//./HTML%20Images/navs1.png'
-		};
-	}
-	else if(document.documentElement.clientWidth >= 1280 &&
-			document.documentElement.clientWidth < 1920)
-	{
-		opts = {
-				timeBetweenMessages:5000,
-				showPlayButton:true,
-				overflowOpt:'visible',
-				allowSwipe:true,
-				showArrows:true,
-				loopMessages:true,
-				autoStartPlay:true,
-				occur:100,
-				placeHolderWidth:0,
-				placeHolderHeight:0,
-				playButtonID:'#nav-play2',
-				leftArrowID:'#nav-left2',
-				rightArrowID:'#nav-right2',
-				showMessageControl:true,
-				navImagePath:'.//./HTML%20Images/navs1.png'
-		};
-	}
-	
-	else if(document.documentElement.clientWidth >= 1920)
-	{
-		opts = {
-				timeBetweenMessages:5000,
-				showPlayButton:true,
-				overflowOpt:'hidden',
-				allowSwipe:true,
-				showArrows:true,
-				loopMessages:true,
-				autoStartPlay:false,
-				occur:100,
-				placeHolderWidth:0,
-				placeHolderHeight:0,
-				playButtonID:'#nav-play2',
-				leftArrowID:'#nav-left2',
-				rightArrowID:'#nav-right2',
-				showMessageControl:true,
-				navImagePath:'.//./HTML%20Images/navs1.png'
-		};
+		
+		var um = new UnlimitedMessages('.UnlimitedMessage2', '.UnlimitedMessage2_umslide', opts);
+		
 	};
-	
-	var um = new UnlimitedMessages('.UnlimitedMessage2', '.UnlimitedMessage2_umslide', opts);
-	
-};
-CreateUMessage2();
+	CreateUMessage2();
+}, 10);
 </script>
 
 </body>
