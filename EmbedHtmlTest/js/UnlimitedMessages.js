@@ -333,7 +333,7 @@ Copyright (c) 2015. FIS.
 		
 		for (var i = 0; i < slideCount; i++) 
 		{
-			this.slideWidths[i] = $(this.messageObjCollection[i]).parent().offsetWidth;
+			this.slideWidths[i] = this.messageObjCollection[i].offsetWidth;
 			if (this.slideWidths[i] > maxWidth) 
 			{
 				maxWidth = this.slideWidths[i]; // The height of the tallest slide so far.		
