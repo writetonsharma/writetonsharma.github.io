@@ -1,0 +1,89 @@
+﻿@charset "utf-8";
+
+/*
+	Designer version 15.0.0 build 132 generated CSS file
+	Generation Date: 03/10/2016
+	Document Name: Responsive.html
+
+	## WARNING: DO NOT EDIT THE FILE!! ##
+*/
+
+body {
+	background-color:#fff;
+}div.maindiv3 {
+	z-index:0;		
+	overflow:auto;
+	position:relative;
+	width:75.50%;
+}
+div.maindiv4 {
+	text-align:left;
+	line-height:1.00;
+	display: block;
+}
+.mainf1 {
+	font-family:Arial;
+	font-size:1.1667em;
+	font-style:normal;
+	font-weight:normal;
+	line-height:100%;
+}
+.mainc1 {
+	color:#0000FF;
+}
+span.mainspan2 {
+	line-height:1.00;
+	display: inline;
+}
+table.maintable1 {
+	border-collapse:separate;
+	border-spacing:0.00px;
+	width:100.00%;
+	background-color:#FFFFFF;
+	border-top:1.00px solid #000000;
+	border-bottom:1.00px solid #000000;
+	border-left:1.00px solid #000000;
+	border-right:1.00px solid #000000;
+	border-radius:15.00px 15.00px 15.00px 15.00px;
+	float:left;
+	display: table;
+}
+td.maintd1 {
+	
+	width:49.87%;
+	vertical-align:top;
+	background-color:#FFFFFF;
+	border-radius:15.00px 0.00px 0.00px 0.00px;
+}
+.mainf2 {
+	font-family:Arial;
+	font-size:0.8333em;
+	font-style:normal;
+	font-weight:normal;
+	line-height:100%;
+}
+td.maintd2 {
+	
+	width:49.87%;
+	vertical-align:top;
+	background-color:#FFFFFF;
+	border-left:1.00px solid #000000;
+	border-radius:0.00px 15.00px 0.00px 0.00px;
+}
+td.maintd3 {
+	
+	width:49.87%;
+	vertical-align:top;
+	background-color:#FFFFFF;
+	border-top:1.00px solid #000000;
+	border-radius:0.00px 0.00px 0.00px 15.00px;
+}
+td.maintd4 {
+	
+	width:49.87%;
+	vertical-align:top;
+	background-color:#FFFFFF;
+	border-top:1.00px solid #000000;
+	border-left:1.00px solid #000000;
+	border-radius:0.00px 0.00px 15.00px 0.00px;
+}
