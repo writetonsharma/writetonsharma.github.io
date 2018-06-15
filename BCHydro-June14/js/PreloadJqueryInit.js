@@ -1,1 +1,1 @@
-jQuery(document).on("mobileinit",function(){jQuery.mobile.autoInitializePage=!1}),window.addEventListener("orientationchange",function(){window.location.reload()},!1);
+jQuery(document).on("mobileinit",function(){jQuery.mobile.autoInitializePage=!1}),window.addEventListener("orientationchange",function(){},!1);
