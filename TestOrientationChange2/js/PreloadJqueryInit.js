@@ -8,7 +8,13 @@ jQuery(document).on("mobileinit",function()
 }),
 window.addEventListener("orientationchange",function()
 {
-	window.location.reload()
+	var width = $(window).width();
+	dev = getDevice(width);
+	if(dev != currDev)
+	{
+		window.location.reload()
+	}
+	currDev = dev;
 },!1);
 
 getDevice = function(width)
