@@ -2,7 +2,7 @@ var currDev, deviceCount = 0;
 devices = {}, jQuery(document).on("mobileinit", function() {
     jQuery.mobile.autoInitializePage = !1
 }), window.addEventListener("orientationchange", function() {
-    var e = $(window).innerWidth();
+    var e = $(window).width();
     dev = getDevice(e), dev != currDev && window.location.reload(), currDev = dev
 }, !1), getDevice = function(e) {
     var t = 0;
@@ -21,5 +21,5 @@ $(links).each(function() {
         devices[deviceCount++] = e[0]
     }
 }), currDev = deviceCount;
-var width = $(window).innerWidth();
+var width = $(window).width();
 currDev = getDevice(width);
