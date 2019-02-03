@@ -1,0 +1,108 @@
+﻿@charset "utf-8";
+
+/*
+	Designer version 19.0.0 build 52 generated CSS file
+	Generation Date: 02/03/2019
+	Document Name: Intesa_ECI_Responsive
+
+	## WARNING: DO NOT EDIT THE FILE!! ##
+*/
+
+div.Page29041 {
+	padding-left:1.41%;
+	padding-right:3.75%;
+	padding-top:0.00px;
+	padding-bottom:38.00px;
+}
+@media print {
+	.noprint {display:none;}
+}
+@media screen {
+	.noscreen {display:none;}
+}
+
+.csfbodybg {
+	background-color:#888;
+}a.csflink:link {
+	color:#0000FF;
+}
+a.csflinkv:visited {
+	color:#800080;
+}
+
+/* reset css */
+.csfbody,.csfdiv,.csfspan1,.csfpre,.csfp1 {
+	margin:0;
+	padding:0;
+	border:0;
+	font-size:100%;
+	font:inherit;
+	vertical-align:baseline;
+}
+.csfp2,.csfspan2,.csfth1,.csftd1 {
+	font-style:normal;
+	font-weight:normal;
+}
+.csftable, .csfcaption, .csftbody, .csftfoot, .csfthead, .csftr, .csfth2, .csftd2 {
+	margin:0;
+	padding:0;
+	border:0;
+	font-size:100%;
+	font:inherit;
+	vertical-align:middle;
+}
+
+img.csfimg, video.csfvideo {width: 100%;}
+.csfclearr {clear: right;}
+.csfclearl {clear: left;}
+.csfclearn {clear: none;}
+.csfvisibleh {visibility: hidden;}
+.csfdisplayn {display: none;}
+/* normal styles */
+p.csfnormal, table.csfnormal, div.csfnormal {
+	text-align:left;
+	text-indent:0;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0.0in;
+	margin-left:0in;
+	clear:left;
+}
+
+/* page break line */
+hr.hr1 {
+	float:left;
+	height:100%;
+	width:100%;
+	margin:0;
+	border-style:solid;
+	background-color:#666666;
+}
+/* page break */
+div.div1 {
+	height:5px;
+	position:relative;
+	page-break-before:always;
+	margin-left:auto;
+	margin-right:auto;
+	width:100%;
+	margin:0;
+	font-size:0px;
+	background-color:#888;
+}
+
+span.span1 {
+	visibility:hidden;white-space:pre;
+}
+div.div2 {
+	line-height:4px;
+}
+svg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow:hidden;
+}
+br.br1 {
+	clear:left;
+}
