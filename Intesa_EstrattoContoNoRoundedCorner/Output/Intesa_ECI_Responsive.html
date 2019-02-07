@@ -989,6 +989,46 @@ Your browser does not support the video tag.
 
 <script type="text/javascript">
 
+(function(H) {
+  H.seriesTypes.pie.prototype.placeDataLabels = function() {
+    this.points.forEach(function(point) {
+      var dataLabel = point.dataLabel,
+        _pos;
+
+      if (dataLabel && point.visible) {
+        _pos = dataLabel._pos;
+        if (_pos) {
+
+          // Shorten data labels with ellipsis if they still overflow
+          // after the pie has reached minSize (#223).
+          if (dataLabel.sideOverflow) {
+            dataLabel._attr.width =
+              Math.max(dataLabel.getBBox().width - dataLabel.sideOverflow, 0);
+
+            dataLabel.css({
+              width: dataLabel._attr.width + 'px',
+              textOverflow: (
+                (this.options.dataLabels.style || {})
+                .textOverflow ||
+                'ellipsis'
+              )
+            });
+            dataLabel.shortened = true;
+          }
+
+          dataLabel.attr(dataLabel._attr);
+          dataLabel[dataLabel.moved ? 'animate' : 'attr'](_pos);
+          dataLabel.moved = true;
+        } else if (dataLabel) {
+          dataLabel.attr({
+            y: -9999
+          });
+        }
+      }
+    }, this);
+  };
+}(Highcharts));
+
 CreateCObjects1 = function()
 {
 	var opts;
